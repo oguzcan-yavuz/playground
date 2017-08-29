@@ -1,0 +1,46 @@
+--- 12/10/2016 Çarşamba ---
+
+--- Sabitler, Değişkenler ve Operatörler
+
+- C'de Veri Türleri
+
+TÜR - AÇIKLAMA - BOYUT - SINIR
+
+1) int (tamsayı) 4BYTE
+2) unsign int (0 ile 4294967295 arası bir değer alır)
+3) short (kısa tamsayı) 2BYTE (-32.768 ile +32.762)
+4) unsinged short 2BYTE (0 ile 65.535)
+5) long (uzun tamsayı) 4BYTE
+6) char (karakter) 1BYTE (-128 ile +127)
+7) unsigned char (0 ile 255 arası)
+8) double (ondalık gerçek sayı) 8BYTE (1,7. 10^308 ile -1,7.10^-308)
+9) long double
+10) float 1BYTE
+
+--- Değişkenler :
+
+1) Bir değişken isminin ilk karakteri sayı olamaz.
+2) Değişken isimleri özel karakter ve boşluk içeremez.
+3) C için ayrılmış kelimeler (keyword) değişken ismi olarak kullanılamaz.
+4) Değişken türleri 31 karakteri geçmemelidir.
+5) Değişken isimlerinde büyük küçük harf farkı vardır.
+
++ Değişken türünün ömrü ne kadardır?
+- Yeni bir değer alana kadar.
+
+-----------------------------------------
+
+--- Sabitler : 
+
+alan = 30;      Bu ifadedeki 30 sabittir.
+
+---------------------------------------
+
+Bazı karakterler ve Görevleri : 
+
+\a => uyarı amaçlı bir ses çıkarır.
+\v => dikey tab bırakır.
+\r => satırbaşı yapar. (row)
+\b => kendinden önceki karakteri siler. (backspace)
+\0 => stringlerin sona geldiğini ifade etmek için kullanılan bir karakterdir. (NULL)
+\\ => ters slash kullanmamızı sağlar

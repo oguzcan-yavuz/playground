@@ -1,0 +1,36 @@
+--- Arama Algoritmaları ve Sıralama Algoritmaları
+
+    (T Notasyonu ve O Notasyonu: Algoritmanın kalitesini ölçme yöntemleri)
+
+    - Arama algoritmaların temel tabanı sıralı bir yapıya sahip olmasıdır.
+    
+    - Binary Search Algoritması: 1 ile 100 arasındaki bir sayıyı en fazla 7 kere sorarak öğrenebiliriz. O notasyonunda => logn
+    - 32 sayı sorarak (32 Bit) bir integer değeri bulabiliriz.
+    
+    - Lineer Search Algoritması: Sırayla tek tek bakmak. O notasyonunda => n
+    
+    - Quadtree Algoritması: http://www.questinygroup.com/wp-content/uploads/2008/12/QuadTree.bmp
+    
+    - Pointer, bir verinin RAM'de nerede olduğunun adresini saklar. Pointer ayrıca stack RAM içerisinde çalışmak zorunda değildir.
+    Bu sayede işlemciden yer isteyebilir (heap RAM).
+    [32, 73, 192, 743, 1024]
+    int* x = 0;
+    x -> 0
+    *x -> 32
+    x[0] -> 32
+    *(x + 0) -> 32
+    
+    - Sıralama Algoritmaları: Bütün sıralama algoritmaları en az n kere çalışmak zorundadır.
+        
+        // https://visualgo.net/
+
+        - Bubble Sort: Verileri ikili ikili kontrol ederek hepsi sıralanana kadar küçük olanı sola atar.
+        - Select Sort: Sıralanmamış verilerdeki en küçük veriyi bularak en başa alır ve bir sonraki sıradan devam eder.
+        - Insertion Sort: Verinin solunu sıralanmış kabul ederek veriyi kendisinden küçük bir veri gelene kadar sola kaydırır. Kendisinden
+        küçük veri bulduğunda onun hemen bir sonrasına veriyi yerleştirir.
+        - Merge Sort: (n x logn) Veriyi ikiye böler, ikiye böldüklerini sıralar, daha sonra diğer ikili verilerle karşılaştırarak dörtlüyü
+        sıralar şeklinde gider.
+        - Quick Sort: Değişim. 
+        - Count Sort: Dizinin içerisinde her bir elemanın kaç kere geçtiğini sayar ve aynı diziyi tekrar sıralı bir şekilde oluşturur. 
+        Koşul: Dizinin aralığının bilinmesi gerek.
+        - Radix Sort: Sayıları basamak değerlerine göre sıralar.

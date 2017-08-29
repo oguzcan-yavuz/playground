@@ -1,0 +1,11 @@
+--- Tarayıcı nasıl çalışır?
+
+- Veriler HTTP protokolüyle HTML formatıyla yollanır. Wireshark filter: HTTP
+
+- Cookie: Her sayfa için web tarayıcımız ayrı bir istek yapar. Tarayıcının görevi, web sitesinin tarayıcımızda tutması gerektiğini söylediği
+verileri tarayıcının web sitesite geri göndermesidir. 
+
+- CSRF
+
+HTML form'lari javascript ile her siteye post edilebilir.
+

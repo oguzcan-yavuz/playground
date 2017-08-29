@@ -1,0 +1,31 @@
+bilg. prog. giriş notlar-1
+
+05/10/2016
+
+1. Problemin Tanımı(Definition): Einstein örneği: bir problemi çözmek için 1 saatim olsa vs...
+
+2. Gerekli analizlerin yapılması(Analysis)
+
+3. Programın tasarlanması(Design)
+
+4. Programın kodlanması(Coding)
+
+5. Programın derlenmesi ve test edilmesi(debugging & testing)
+
+6. G.D.Y (Documentation) 
+
+--- Çevrim Karakterleri: http://www.cs.sfu.ca/CourseCentral/130/johnwill/printf.html
+
+- %d: tamsayı (integer)
+- %i: tamsayı (integer)
+- %f: ondalık sayı (double, float)
+    %lf: ondalık sayı (double)
+- %e: ondalık sayı (double, float) (+üslü sayılar)
+- %E: ondalık sayı (double, float) (+üslü sayılar)
+- %s: alfabetik karakterler (string)
+- %c: tek karakter (char)
+- %u: işaretsiz (unsing)
+- %x: 16'lık biçimdeki işaretsiz türler (hexadecimal)
+- %X: 16'lık biçimdeki işaretsiz türler (hexadecimal)
+
+scanf("%d%f%c%s", &degisken1, &degisken2, &degisken3, &degisken4);

@@ -1,0 +1,39 @@
+- OSI Katmanları
+
+1) Fiziksel Katman: Üç şeyden sorumludur. Bitlerin senkronizasyonu, şifrelenmesi ve fiziksel topoloji. Veriler bitler (bits) halindedir.
+
+--- Topolojiler: Bus, Mesh, Ring, Star topolojileri
+
+--- Current State: 5V ise 1, 0V ise 0 sinyalinin gönderilmesi durumu.
+
+- Değişim Modeli(Transation State(?)): Değişim varsa 1, yoksa 0 sinyalinin gönderilmesi durumu.
+ 
+    - Senkronize, Asenkronize, Isenkronize(UDP?)
+
+2) Data Link: Veriler frames halindedir.
+
+    - MAC bu katmanda çalışır. MAC'in amacı gelen paketlerin gerçekten bize gelip gelmediğini kontrol etmektir. Eğer paket bize gelmemesine
+rağmen paketi açarsak, ağda bize gelen diğer paketler kaçırılabilir.
+
+    - LLC: Gelen paket miktarı yüksek ve sürekli olduğu için, alınabilecek veri kapasitesinin dışında gelen verileri ortak bir alanda toplayıp,
+paket için yeterli kapasiteye tekrar sahip olunduğunda paketi almamızı sağlar. Ayrıca paketlerin birbirlerinin devamı olup olmadığını kontrol
+ederek paketlerdeki hataları ayıklar.
+
+3) Bağlantı Katmanı (Network Layer): Temel olarak adreslemeden sorumludur. (IP) Network layer ayrıca bağlantı odaklı gönderim (connection
+oriented(?)) sorumludur. Paketlerin taşıdığı imzaları kontrol eder. Bir üst katman ve bir alt katmanla iletişim halindedir. MAC OS kullanan 
+bir cihazdan gelen verideki appletalk(?) imzasını çıkararak IP imzası verir ve verinin IP kullanan cihazlar tarafından anlaşılmasını sağlar.
+Veriler packets halindedir.
+
+    1- Socket (Telefon): Bütün paketler aynı hat üzerinden iletilir.
+    2- Message (E-mail)
+    3- Packets (Paketler halinde): Paketler farklı router'lar üzerinden karışık bir şekilde gönderilebilir.
+
+4) Transportation Layer (İletim Katmanı): Tekrar verilerin hatasız bir şekilde gelip gelmediği kontrol edilir. Veriler segments halindedir. 
+
+5) Oturum Katmanı (Session Layer): Her paket belli bir süre içerisinde iletilmek zorundadır, yoksa paket düşer. 
+    
+6) Presentation Layer: 
+    1- Data formatlama (ASCII, IBM... )
+    2- Encoding (Asimetrik: Public Key, Private Key)
+    
+7) Application Layer: FTP, HTTP...

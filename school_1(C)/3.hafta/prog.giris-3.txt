@@ -1,0 +1,38 @@
+ 
+/* operatörler: değişkenler üzerinde mantıksal işlemler yapmamızı sağlayan yapılardır.
+	Pointer: üç değişkenimiz var diyelim. a, b, c. değişkenleri a, b, c diye çağırmak yerine 
+	1.değişken, 2.değişken... şeklinde hafızada tutulduğu yere göre çağırırsak buna pointer denir.
+ 
+	örnek: 
+ 
+	a = 4;
+	a++;
+	c = 0;
+	c++;
+ 
+	Operatörlerde öncelikler:
+	(Öncelik sırasına göre)
+	0. ()
+	1. ++
+	2. --
+	3. *
+	4. /
+	5. %
+	6. +
+	7. -
+ 
+	Örnek soru: Karışık işlemlerden geçen bir sayı verilecek ve çıktısı istenecek.
+ 
+	b =  4 * 6 / 8 + 8 * b++;			// çıktı?
+
+
+ *****************************
+
+--- Karşılaştırma Operatörleri:,
+
+	==
+	!=
+	<
+	>
+	<=
+	>=
