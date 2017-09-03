@@ -16,9 +16,9 @@ def create_combo_lock(nodes):
     G = {}
     i = 0
     while i < len(nodes) - 1:
-        G[nodes[i]] = [nodes[i + 1]]
+        make_link(G, nodes[i], nodes[i + 1])
         if i < len(nodes) - 2:
-            G[nodes[0]].append(nodes[i + 2])
+            make_link(G, 0, nodes[i + 2])
         i += 1
     return G
 
