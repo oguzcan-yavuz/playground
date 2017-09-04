@@ -38,7 +38,6 @@ print("training time: {0} s".format(round(time() - t0, 3)))
 # pred = clf.predict(predicts)
 pred = clf.predict(features_test)
 print(sum(pred))    # we are printing the sum of a list with values 1 or 0 to find how many 1 it contains
-# pred = clf.predict(features_test)
 # print("accuracy: {0}".format(accuracy_score(pred, labels_test)))
 
 #########################################################

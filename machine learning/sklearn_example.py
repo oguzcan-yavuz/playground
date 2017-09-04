@@ -10,6 +10,8 @@ def create_data():
 
 
 features_train, labels_train, features_test, labels_test = create_data()
+# print(len(features_train[0]))     #Gives the feature count where features are columns in a numpy array
+
 
 clf = SVC(kernel="linear")
 # clf = svm.SVC(kernel='rbf', C=10000.0)
