@@ -17,7 +17,7 @@ t0 = time()
 clf.fit(features_train, labels_train)
 print("training time: {0} s".format(round(time() - t0, 3)))
 pred = clf.predict(features_test)
-
+# acc = clf.score(features_test, labels_test)
 
 def submit_accuracy():
     acc = accuracy_score(pred, labels_test)
