@@ -1,3 +1,5 @@
+from time import time
+
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
@@ -10,7 +12,10 @@ def create_data():
 features_train, labels_train, features_test, labels_test = create_data()
 
 clf = SVC(kernel="linear")
+# clf = svm.SVC(kernel='rbf', C=10000.0)
+t0 = time()
 clf.fit(features_train, labels_train)
+print("training time: {0} s".format(round(time() - t0, 3)))
 pred = clf.predict(features_test)
 
 
