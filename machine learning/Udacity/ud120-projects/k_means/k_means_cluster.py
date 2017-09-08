@@ -43,29 +43,52 @@ data_dict = pickle.load( open("../final_project/final_project_dataset.pkl", "r")
 ### there's an outlier--remove it! 
 data_dict.pop("TOTAL", 0)
 
+# prints the minimum and maximum salary, ignores NaN values
+# eso = [data_dict[key]["salary"] for key in data_dict if data_dict[key]["salary"] != "NaN"]
+# print(min(eso), max(eso))
+
 
 ### the input features we want to use 
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
 feature_2 = "exercised_stock_options"
-poi  = "poi"
-features_list = [poi, feature_1, feature_2]
+# feature_3 = "total_payments"
+poi = "poi"
+features_list = [poi, feature_1, feature_2] #, feature_3
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
+# Feature Scaling
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+salaries, eso = [], []
+for f1, f2 in finance_features:
+    salaries.append(f1)
+    eso.append(f2)
+scaled_salaries = scaler.fit_transform(salaries)
+# print(scaler.transform([200000.0]))
+
+scaled_eso = scaler.fit_transform(eso)
+# print(scaler.transform([1000000.0]))
+
+# Convert old feature values in finance_features list to the new scaled feature values.
+finance_features = []
+for i in range(len(salaries)):
+    finance_features.append([scaled_salaries[i], scaled_eso[i]])
+print(finance_features)
 
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to 
 ### for f1, f2, _ in finance_features:
 ### (as it's currently written, the line below assumes 2 features)
-for f1, f2 in finance_features:
+for f1, f2 in finance_features:     # , _
     plt.scatter( f1, f2 )
 plt.show()
 
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
-
-
+from sklearn.cluster import KMeans
+pred = KMeans(n_clusters=2).fit_predict(data)
 
 
 ### rename the "name" parameter when you change the number of features
