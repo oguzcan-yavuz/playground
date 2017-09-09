@@ -26,8 +26,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(sublinear_tf=True, max_df=0.5,
                              stop_words='english')
 features_train = vectorizer.fit_transform(features_train)
-features_test  = vectorizer.transform(features_test).toarray()
-
+features_test = vectorizer.transform(features_test).toarray()
+features = vectorizer.get_feature_names()
+# print(features[55832])
+# print(features[19838])
+print(features[33580])
 
 ### a classic way to overfit is to use a small number
 ### of data points and a large number of features;
@@ -38,6 +41,14 @@ labels_train   = labels_train[:150]
 
 
 ### your code goes here
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier()
+clf.fit(features_train, labels_train)
+print(clf.score(features_test, labels_test))
 
-
-
+# catch the outliers, if they are "signature words" without meaning
+# add them to will_delete list in text_learning/vectorize_text.py and repeat until
+# we delete all outliers. By doing so, we are fixing overfitting.
+for i, value in enumerate(clf.feature_importances_):
+    if value > 0.2:
+        print(i, value)
