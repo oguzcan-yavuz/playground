@@ -41,23 +41,35 @@ for name, from_person in [("sara", from_sara), ("chris", from_chris)]:
     for path in from_person:
         ### only look at first 200 emails when developing
         ### once everything is working, remove this line to run over full dataset
-        temp_counter += 1
-        if temp_counter < 200:
-            path = os.path.join('..', path[:-1])
-            print path
-            email = open(path, "r")
+        # temp_counter += 1
+        # if temp_counter < 200:
+        path = os.path.join('..', path[:-1])
+        # print path
+        email = open(path, "r")
 
-            ### use parseOutText to extract the text from the opened email
+        ### use parseOutText to extract the text from the opened email
+        stemmed_email_string = parseOutText(email)
+        ### use str.replace() to remove any instances of the words
+        ### ["sara", "shackleton", "chris", "germani"]
+        will_delete = ["sara", "shackleton", "chris", "germani"]
+        for word in will_delete:
+            stemmed_email_string = stemmed_email_string.replace(word, "")
+        ### append the text to word_data
+        word_data.append(stemmed_email_string)
+        ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
+        from_data.append(0 if name == "sara" else 1)
+        email.close()
 
-            ### use str.replace() to remove any instances of the words
-            ### ["sara", "shackleton", "chris", "germani"]
+# print(word_data[152])
 
-            ### append the text to word_data
+# Transform word data to tf-idf matrix
+from sklearn.feature_extraction.text import TfidfVectorizer
+vectorizer = TfidfVectorizer(stop_words="english")
+vectorizer.fit_transform(word_data)
+vocab_list = vectorizer.get_feature_names()
+print(len(vocab_list))
+print(vocab_list[34597])
 
-            ### append a 0 to from_data if email is from Sara, and 1 if email is from Chris
-
-
-            email.close()
 
 print "emails processed"
 from_sara.close()
