@@ -19,11 +19,13 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-# count = 0
-# for v in enron_data:
-#     if enron_data[v]['poi'] == 1:
-#         count += 1
-# print(count)
+print("total number of data points: {}".format(len(enron_data)))
+
+count = 0
+for v in enron_data:
+    if enron_data[v]['poi'] == 1:
+        count += 1
+print("Number of poi: {}, number of non-poi: {}".format(count, 146 - count))
 
 # print(enron_data['PRENTICE JAMES']['total_stock_value'])
 
