@@ -23,14 +23,15 @@ learning to accomplish our goal is a good choice.
     Enron dataset which I am using in this project, 
     contains emails of the workers at the Enron company. 
     It has 146 people; 18 of them labeled as POI and 126 
-    of them labeled as non-poi. I analysed these emails 
-    contents's and other datas about the workers and trained 
+    of them labeled as NON-POI. I analysed these emails 
+    contents and other datas about the workers and trained 
     my classifier with these datas. I used ... features. 
-    There are some features with many missing values but 
-    this information also gives us informations about POI's. 
-    As an example, all of the POI's have a salary value while 
-    some of people have missing salary values. I had a few 
-    outliers in our data. I handled those outliers with ... 
+    There are some features with many missing values. I handled
+    them ... . I had a few outliers in our data but I didn't 
+    remove them. Since I am building a POI classifier, those 
+    outliers are very likely to be our POI's. Because POIs are 
+    most likely have anomalies so I want to catch those 
+    anomalies to classify them.
 
 
 2) What features did you end up using in your 
@@ -51,4 +52,6 @@ of parameter values.  [relevant rubric items:
 “create new features”, “intelligently select features”, 
 “properly scale features”]
 
-    * 
+    * I visualized different features and I tried to guess the 
+    features with most information gains to improve my 
+    intuition.
