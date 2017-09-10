@@ -32,13 +32,8 @@ with open("final_project_dataset.pkl", "r") as data_file:
 my_dataset = data_dict
 
 ### Extract features and labels from dataset for local testing
-# TODO: try to run this again with all features after creating percentile features.
 data = featureFormat(my_dataset, features_list, sort_keys=True)
 labels, features = targetFeatureSplit(data)
-from sklearn.feature_selection import SelectKBest
-selector = SelectKBest(k=7)
-selector.fit_transform(features, labels)
-print(selector.pvalues_)
 
 ### Task 4: Try a varity of classifiers
 ### Please name your classifier clf for easy export below.
@@ -47,8 +42,6 @@ print(selector.pvalues_)
 ### http://scikit-learn.org/stable/modules/pipeline.html
 
 # Provided to give you a starting point. Try a variety of classifiers.
-from sklearn.naive_bayes import GaussianNB
-clf = GaussianNB()
 
 ### Task 5: Tune your classifier to achieve better than .3 precision and recall 
 ### using our testing script. Check the tester.py script in the final project
@@ -58,9 +51,29 @@ clf = GaussianNB()
 ### http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.StratifiedShuffleSplit.html
 
 # Example starting point. Try investigating other evaluation techniques!
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 features_train, features_test, labels_train, labels_test = \
     train_test_split(features, labels, test_size=0.3, random_state=42)
+
+# TODO: try to run this again with all features after creating percentile features.
+from sklearn.feature_selection import SelectKBest
+selector = SelectKBest(k=7)
+best_features = selector.fit_transform(features_train, labels_train)
+
+# TODO: make this a function or use GridSearchCV
+from sklearn.naive_bayes import GaussianNB
+clf = GaussianNB()
+clf.fit(best_features, labels_train)
+print(clf.score(features_test, labels_test))
+from sklearn.tree import DecisionTreeClassifier
+clf = DecisionTreeClassifier()
+clf.fit(best_features, labels_train)
+print(clf.score(features_test, labels_test))
+from sklearn.svm import SVC
+clf = SVC(kernel='rbf')
+clf.fit(best_features, labels_train)
+print(clf.score(features_test, labels_test))
+
 
 ### Task 6: Dump your classifier, dataset, and features_list so anyone can
 ### check your results. You do not need to change anything below, but make sure
