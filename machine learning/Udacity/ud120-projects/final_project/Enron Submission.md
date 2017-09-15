@@ -98,4 +98,54 @@ of parameter values.  [relevant rubric items:
         
         It was still pretty bad so I didn't use those features.
 
-3)
+3) What algorithm did you end up using? What other one(s) 
+did you try? How did model performance differ between 
+algorithms?  [relevant rubric item: “pick an algorithm”]
+
+    * At first I tried to use three different algorithm with
+    default parameters by hand:
+    
+    Algorithm | Score
+    --------- | ----------
+    GaussianNB | 0.047619047619
+    DecisionTreeClassifier | 0.880952380952 - 0.904761904762
+    RandomForestClassifier | 0.904761904762 - 0.952380952381
+    SVC | 0.95238095238
+    
+    All of those except GaussianNB did pretty well even without
+    any parameter tuning. GaussianNB was terrible so I delete it
+    from candidates and used a GridSearchCV for tuning parameters
+    and choosing the best result among those three algorithms.
+    Results:
+    
+    Algorithm | Best Parameters | Best Score
+    --------- | -------------------- | -------
+    DecisionTreeClassifier | 'min_samples_split': 2 | 0.842857142857
+    RandomForestClassifier | 'min_samples_split': 10, 'n_estimators': 10' | 0.864285714286
+    SVC | 'C': 1 | 0.871428571429
+    
+    I wanted to try more parameters especially with SVC but
+    it took too much time to train SVCs with my computer. From
+    this results, I choose to use SVC.
+    
+4) What does it mean to tune the parameters of an algorithm, 
+and what can happen if you don’t do this well?  How did you 
+tune the parameters of your particular algorithm? What 
+parameters did you tune? (Some algorithms do not have 
+parameters that you need to tune -- if this is the case for 
+the one you picked, identify and briefly explain how you 
+would have done it for the model that was not your final 
+choice or a different model that does utilize parameter 
+tuning, e.g. a decision tree classifier).  [relevant rubric 
+items: “discuss parameter tuning”, “tune the algorithm”]
+
+    * It means optimizing the algorithm by changing it's 
+    parameters. If we don't do this well, we can't get the
+    maximum efficiency from our algorithm. I used GridSearchCV
+    to tune my algorithm. I selected the parameters which I
+    thought might affect the efficiency of our classification.
+    I tuned:
+    
+        * 'min_samples_split' => DecisionTreeClassifier,
+        * 'min_samples_split', 'n_estimators' => RandomForestClassifier,
+        * 'C' => SVC.
