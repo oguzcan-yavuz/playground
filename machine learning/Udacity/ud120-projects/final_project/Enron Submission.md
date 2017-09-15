@@ -80,7 +80,8 @@ of parameter values.  [relevant rubric items:
         SelectKBest algorithm. Their scores_ and pvalues_ were:
         
         feature | score_ | pvalue_
-        from_poi_percentile | 9.00541121e+00 | 9.00541121e+00
+        ------------- | ---------------- | --------
+        from_poi_percentile | 9.00541121e+00 | 0.00342192
         to_poi_percentile | 2.46799385e+00 | 0.11944251
         
         So those features didn't had as much information gain
@@ -91,8 +92,9 @@ of parameter values.  [relevant rubric items:
         POI's to all messages send and receiver from everyone.
         score_ and pvalue_ of "poi_percentile" was:
         
-        score_ | pvalue_
-        3.83020936e+00 | 0.05321129
+        feature | score_ | pvalue_
+        ------------- | ---------------- | --------
+        poi_percentile | 3.83020936e+00 | 0.05321129
         
         It was still pretty bad so I didn't use those features.
 
