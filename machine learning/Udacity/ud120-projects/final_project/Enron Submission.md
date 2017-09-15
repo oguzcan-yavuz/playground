@@ -76,7 +76,7 @@ of parameter values.  [relevant rubric items:
         NON-POI's. So using just count of messages was useless.
         I created two new features to calculate percentile of
         messages from poi (from_poi_percentile) and messages 
-        to poi (to_poi_percentile). I scaled them with 
+        to poi (to_poi_percentile). I scored them with 
         SelectKBest algorithm. Their scores_ and pvalues_ were:
         
         feature | score_ | pvalue_
@@ -89,7 +89,7 @@ of parameter values.  [relevant rubric items:
         a new feature as well with combining both "from_poi_percentile"
         and "to_poi_percentile" into one feature as "poi_percentile"
         by calculating the rate of messages send and receiver from
-        POI's to all messages send and receiver from everyone.
+        POI's to all messages sent and received from everyone.
         score_ and pvalue_ of "poi_percentile" was:
         
         feature | score_ | pvalue_
@@ -102,7 +102,7 @@ of parameter values.  [relevant rubric items:
 did you try? How did model performance differ between 
 algorithms?  [relevant rubric item: “pick an algorithm”]
 
-    * At first I tried to use three different algorithm with
+    * At first I tried to use four different algorithm with
     default parameters by hand:
     
         Algorithm | Score
@@ -149,3 +149,13 @@ items: “discuss parameter tuning”, “tune the algorithm”]
         * 'min_samples_split' => DecisionTreeClassifier,
         * 'min_samples_split', 'n_estimators' => RandomForestClassifier,
         * 'C' => SVC.
+
+5) What is validation, and what’s a classic mistake you can 
+make if you do it wrong? How did you validate your analysis? 
+[relevant rubric items: “discuss validation”, 
+“validation strategy”]
+
+    * Validation is, testing our model with some test data. 
+    The classic mistake we can make in validation is, using 
+    the same data we used to train our model for testing our 
+    model.
