@@ -17,7 +17,7 @@ data = featureFormat(data_dict, features)
 ### your code below
 
 def percent_calculator(percentile, full):
-    return percentile * 1.0 / full if percentile != 0 and full != 0 else 0
+    return percentile * 1.0 / (full + percentile) if percentile != 0 and full != 0 else 0
 
 
 for point in data:
@@ -32,9 +32,12 @@ for point in data:
     from_poi_percent = percent_calculator(from_poi, from_all)
     to_poi_percent = percent_calculator(to_poi, to_all)
 
-    matplotlib.pyplot.scatter(from_poi_percent, to_poi_percent, c="k" if poi == 1.0 else "w")
+    # poi percentile for both send and received messages
+    full_percentile = percent_calculator(from_poi + to_poi, from_all + to_all)
+
+    matplotlib.pyplot.scatter(salary, full_percentile, c="k" if poi == 1.0 else "w")
 
 
-matplotlib.pyplot.xlabel(features[2])
-matplotlib.pyplot.ylabel(features[4])
+matplotlib.pyplot.xlabel(features[1])
+matplotlib.pyplot.ylabel("full_percentile")
 matplotlib.pyplot.show()
