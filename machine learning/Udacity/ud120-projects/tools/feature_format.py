@@ -67,8 +67,28 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
             try:
                 dictionary[key][feature]
             except KeyError:
-                print "error: key ", feature, " not present"
-                return
+                if feature == "from_poi_percent" or feature == "to_poi_percent":
+                    pass
+                else:
+                    print "error: key ", feature, " not present"
+                    return
+            # if feature == "from_poi_percent":
+            #     # nan values coming to here and they can't be multiplied with float values.
+            #     # fix that by checking the value if it is NaN or not before code comes here.
+            #     if dictionary[key]["from_poi_to_this_person"] != "NaN" and dictionary[key]["from_messages"] != "NaN":
+            #         value = (1.0 * dictionary[key]["from_poi_to_this_person"]) / (dictionary[key]["from_messages"] + dictionary[key]["from_poi_to_this_person"])
+            #         poi_percentile = 1.0 * (dictionary[key]["from_poi_to_this_person"] + dictionary[key]["from_this_person_to_poi"]) / (dictionary[key]["from_messages"] + dictionary[key]["to_messages"] + dictionary[key]["from_poi_to_this_person"] + dictionary[key]["from_this_person_to_poi"])
+            #         # value = poi_percentile
+            #         print("poi percentile: {0}, poi: {1}".format(poi_percentile, dictionary[key]["poi"]))
+            #         print("from_poi: {0}\nfrom_messages: {1}\nfrom_percentile: {2}\nkey: {3}".format(dictionary[key]["from_poi_to_this_person"], dictionary[key]["from_messages"] + dictionary[key]["from_poi_to_this_person"], value, dictionary[key]))
+            #     else:
+            #         value = 0
+            # elif feature == "to_poi_percent":
+            #     if dictionary[key]["from_this_person_to_poi"] != "NaN" and dictionary[key]["to_messages"] != "NaN":
+            #         value = (1.0 * dictionary[key]["from_this_person_to_poi"]) / dictionary[key]["to_messages"] + dictionary[key]["from_this_person_to_poi"]
+            #     else:
+            #         value = 0
+            # else:
             value = dictionary[key][feature]
             if value=="NaN" and remove_NaN:
                 value = 0
