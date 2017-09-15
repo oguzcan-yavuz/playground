@@ -105,12 +105,12 @@ algorithms?  [relevant rubric item: “pick an algorithm”]
     * At first I tried to use three different algorithm with
     default parameters by hand:
     
-    Algorithm | Score
-    --------- | ----------
-    GaussianNB | 0.047619047619
-    DecisionTreeClassifier | 0.880952380952 - 0.904761904762
-    RandomForestClassifier | 0.904761904762 - 0.952380952381
-    SVC | 0.95238095238
+        Algorithm | Score
+        --------- | ----------
+        GaussianNB | 0.047619047619
+        DecisionTreeClassifier | 0.880952380952 - 0.904761904762
+        RandomForestClassifier | 0.904761904762 - 0.952380952381
+        SVC | 0.95238095238
     
     All of those except GaussianNB did pretty well even without
     any parameter tuning. GaussianNB was terrible so I delete it
