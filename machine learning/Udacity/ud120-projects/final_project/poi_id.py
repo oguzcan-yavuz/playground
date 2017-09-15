@@ -6,6 +6,7 @@ sys.path.append("../tools/")
 
 from feature_format import featureFormat, targetFeatureSplit
 from tester import dump_classifier_and_data
+from time import time
 
 ### Task 1: Select what features you'll use.
 ### features_list is a list of strings, each of which is a feature name.
@@ -60,24 +61,47 @@ features_train, features_test, labels_train, labels_test = \
 # print(selector.scores_)
 # print(selector.pvalues_)
 
-# TODO: make this a function or use GridSearchCV
-from sklearn.naive_bayes import GaussianNB
-clf = GaussianNB()
-clf.fit(features_train, labels_train)   # best features gives an error so i returned this to features_train
-print(clf.score(features_test, labels_test))
-from sklearn.tree import DecisionTreeClassifier
-clf = DecisionTreeClassifier()
-clf.fit(features_train, labels_train)
-print(clf.score(features_test, labels_test))
-from sklearn.svm import SVC
-clf = SVC(kernel='rbf')
-clf.fit(features_train, labels_train)
-print(clf.score(features_test, labels_test))
 
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.model_selection import GridSearchCV
+
+algorithms = [DecisionTreeClassifier(), RandomForestClassifier(), SVC()]
+parameters = [
+    {'min_samples_split': [2, 10, 20, 40]},
+    {'n_estimators': [3, 10, 20], 'min_samples_split': [2, 10, 20, 40]},
+    {'C': [1, 10]},
+]
+
+
+# returns the score of the given algorithm
+def check_score(algorithm):
+    classifier = algorithm
+    classifier.fit(features_train, labels_train)
+    return classifier.score(features_test, labels_test)
+
+
+# prints results for each algorithm in algorithms list
+# for algo in algorithms:
+#     print(check_score(algo))
+
+
+# best result was SVC with C=1 parameter
+# for algo, params in zip(algorithms, parameters):
+#     t0 = time()
+#     clf = GridSearchCV(algo, params)
+#     clf.fit(features, labels)
+#     print("training time: {0} s".format(round(time() - t0, 3)))
+#     print("best score: {0}\nbest parameters: {1}\n".format(clf.best_score_, clf.best_params_))
+
+clf = SVC()
+clf.fit(features_train, labels_train)
+print(clf.score(features_test, labels_test))
 
 ### Task 6: Dump your classifier, dataset, and features_list so anyone can
 ### check your results. You do not need to change anything below, but make sure
 ### that the version of poi_id.py that you submit can be run on its own and
 ### generates the necessary .pkl files for validating your results.
 
-dump_classifier_and_data(clf, my_dataset, features_list)
+# dump_classifier_and_data(clf, my_dataset, features_list)
