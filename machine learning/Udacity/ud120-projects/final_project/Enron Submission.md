@@ -126,7 +126,8 @@ algorithms?  [relevant rubric item: “pick an algorithm”]
     
     I wanted to try more parameters especially with SVC but
     it took too much time to train SVCs with my computer. From
-    this results, I choose to use SVC.
+    this results, I choose to use RandomForestClassifier since
+    I couldn't optimize SVC very much.
     
 4) What does it mean to tune the parameters of an algorithm, 
 and what can happen if you don’t do this well?  How did you 
@@ -158,4 +159,29 @@ make if you do it wrong? How did you validate your analysis?
     * Validation is, testing our model with some test data. 
     The classic mistake we can make in validation is, using 
     the same data we used to train our model for testing our 
-    model.
+    model. I validated my analysis with GridSearchCV scores
+    and also with splitting my train data and test data randomly.
+    I tried splitting my data with different test sizes. Results:
+    
+        Test Size | Score
+        ----- | ------
+        0.1 | 0.928571428571
+        0.2 | 0.928571428571
+        0.25 | 0.942857142857
+        0.3 | 0.928571428571 - 0.952380952381
+        0.375 | 0.867924528302 - 0.905660377358
+        0.4 | 0.892857142857 - 0.910714285714
+        0.5 | 0.885714285714 - 0.914285714286
+    
+6) Give at least 2 evaluation metrics and your average 
+performance for each of them.  Explain an interpretation of 
+your metrics that says something human-understandable about 
+your algorithm’s performance. [relevant rubric item: 
+“usage of evaluation metrics”]
+
+    * I calculated accuracy, precision, recall, F1, F2 with 
+    tester.py. Results:
+    
+        Accuracy | Precision | Recall | F1 | F2
+        ----- | ----- | ----- | ----- | ------
+        0.84864	| 0.43200 | 0.18900 | 0.26296 | 0.21296 

@@ -87,15 +87,15 @@ def check_score(algorithm):
 #     print(check_score(algo))
 
 
-# best result was SVC with C=1 parameter
 # for algo, params in zip(algorithms, parameters):
 #     t0 = time()
 #     clf = GridSearchCV(algo, params)
 #     clf.fit(features, labels)
 #     print("training time: {0} s".format(round(time() - t0, 3)))
+#     print("algorithm: ", algo)
 #     print("best score: {0}\nbest parameters: {1}\n".format(clf.best_score_, clf.best_params_))
 
-clf = SVC()
+clf = RandomForestClassifier(min_samples_split=10, n_estimators=10)
 clf.fit(features_train, labels_train)
 print(clf.score(features_test, labels_test))
 
@@ -104,4 +104,4 @@ print(clf.score(features_test, labels_test))
 ### that the version of poi_id.py that you submit can be run on its own and
 ### generates the necessary .pkl files for validating your results.
 
-# dump_classifier_and_data(clf, my_dataset, features_list)
+dump_classifier_and_data(clf, my_dataset, features_list)
