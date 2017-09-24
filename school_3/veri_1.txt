@@ -1,0 +1,103 @@
+Ozan Akı
+ozanaki@hotmail.com
+ozanaki.com
+
+Veri Yapıları ve Algoritmalar
+
+Dr. Rıfat ÇÖLKESEN (papatya yayınları)
+
+------------------------------
+
+http://www.alexeyshmalko.com/2014/using-vim-as-c-cpp-ide/
+
+Konu basliklari
+
+big(0)
+Pointer
+Veri Yapilari = Bir verinin bellekte nasil saklandigidir.
+    C'de enum tipine tekrar bak.
+    http://www.cs.yale.edu/homes/aspnes/pinewiki/C(2f)Graphs.html
+    Graph veri yapisina tekrar bak, yol bulma algoritmalarina tekrar bak.
+    Siralama algoritmalari, liste yapilarina tekrar bak.
+    Arama algoritmalarina bak.
+    Struct ve pointer bak.
+    Akis semasi okumak ve olusturmak.
+    Query, Stack, LinkedLists, Tree, Stack Machine
+
+------------------------------------------------------------------------------
+
+Her bir islemcinin kendisine ozel bir komut seti vardir.
+Iki tip en sik kullanilan mimari:
+    von Neummann
+    Harvard
+    Iki mimari arasindaki fark?
+        komutlar ve veriler ayni bellek icerisinde tutulur. (von Neumann)
+        Harvard mimarisinde ayri tutulur. (Arduino vb. de kullanilir.)
+
+Yazilim ile donanimi birlestiren sey mikroislemcidir.
+
+    CISC(Complex Instruction Set Computer) ornek: 8086/8088
+    RISC(Reduced Instruction Set Computer) ornek: PIC16F84A
+
+    Hangi programlama dillerinde yazarsak yazalim, kodumuz en sonunda yukaridaki komutlara derleyici tarafindan donusturulur.
+    Giga = Milyar(Billion)
+    Islemci hizlari islemcilerin saniyede kac komut calistirabildigini belirtir. 3Ghz'lik bir islemci saniyede 3 milyar komut calistirir.
+
+Mikroislemci
+
+    - Islemci aslinda elektronik bir devredir. Islemci, uzerinde bir yazilim yoksa hicbir ise yaramaz. Bellekten komutu alir ve calistirir.
+    Komut uzerinde herhangi bir denetim yapmaz. (Fetch & Execution)
+
+Bellekler
+
+    - Yari iletken = RAM, ROM, PROM, EPROM, EEPROM, FLASH
+    - Manyetik = Kaset, Kartuş, Harddisk
+    - Optik = CDROM, DVD-ROM
+
+Erisim Durumuna Gore Bellek Cesitleri
+
+    Register
+    Cache Bellek
+    Ic bellek - RAM
+    Saklama birimleri (Harddisk)
+    Yedekleme birimleri (Harddisk)
+
+    Yukaridan asagiya islemciye yaklasilir ve erisim hizi artar, asagidan yukariya kapasite artar.
+
+Isletim Sistemleri
+
+    - Her islemcinin kendi komut seti var.
+
+    Isletim sisteminin gorevleri
+
+        CPU Yonetimi
+
+            Bilgisayarda yapilan coklu islemlerin islemciye hepsini ayni anda calisiyomus gibi gosterebilmek icin dagitmasi.
+
+        Gorev Zaman Paylasimi
+        Giris Cikis islemleri
+        Ana Bellek Yonetimi
+        Dosya Sistemi (Disk) Yonetimi
+        Kullanici Yonetimi
+        Guvenlik ve Koruma
+
+Yazilim
+
+    Makine Dili
+    Birlestirici Dil (Assembly)
+    Kaynak Kod
+    Compiler = Kodu yazdigimiz bilgisayar icin derler.
+    Cross Compiler = Kodu baska bir sistem icin derler. Ornek: Arduino
+    Linker = Compile edilmis kodlari calistirilabilir dosyaya cevirir. Ornek dosya tipleri (HEX)
+
+Programlama Dilleri
+
+    Prosedurel yonelimli    (C, Fortran, Pascal)
+    Nesne yonelimli         (C++, C#, Java)
+    Mantik yonelimli        (Prolog)
+    Gorev yonelimli         (SQL, Verilog, Mathematica)
+
+
+
+
+
