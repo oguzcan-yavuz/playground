@@ -1,0 +1,18 @@
+Genel Kavramlar
+
+Kod yazmak: Kullanilan programlama dilindeki komutlari kullanmak.
+Veri yapilari dersi, ana dilin komutlarindan ziyade bu komutlarin altyapisina ve kendi aralarindaki iliskilere deginir.
+Problemin cozumunde onemli bir nokta da veri yapisinin dogru secilmesidir.
+
+?) Bir byte icerisinde sayinin negatif veya pozitif oldugunun bilgisini nasil saklariz?
+    1) bir biti pozitif veya negatiflik durumu icin ayiririz
+    2) two's complement
+
+Float Sayi Formati(IEEE 754)
+https://www.h-schmidt.net/FloatConverter/
+
+Eger tanimladigimiz degisken 1 byteden uzunsa bu degisken bellekteki bir adrese yerlestirilirken ardisik adreslere yerlestirilir
+    Yani 2 byte lik bir short tanimladigimizda, bu short'un adresi 1 olursa, sadece 1 adresine 1 byte sigacagi icin,
+    kalan 2.byte, bellekte 2 adresinden baslar. Stack olacak sekilde ikinci bir degisken tanimladigimizda, bu degiskenin baslangic
+    adresi 3.byte'den baslar. cunku ilk 2 byte, ilk tanimladigimiz short degiskenine aittir.
+    (Little Endian, Big Endian)

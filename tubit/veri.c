@@ -32,19 +32,19 @@ void add_to_array(ResizeableArray *resizeableArray, int value) {
         resize_array(resizeableArray);
         add_to_array(resizeableArray, value);
     }
-    
+
 }
 
 int main() {
-    
+
     /* malloc (verdigimiz byte boyutunda isletim sisteminden yer ister)
        calloc (malloc haricinde istedigimiz boyutun degerini de belirtmemizi saglar. ornek: sayac yaparken dizinin bos elemanlarini 0 olarak istemek)
        realloc (daha once aldigimiz bir ram blogunu buyutur veya kucultur)
-    
-    Struck: Class yapisinin babasi.
+
+    Struct: Class yapisinin babasi.
     typedef: typedef int ahmet (int yerine ahmet yazarsak ayni islevi gorecek)
     */
-    
+
     ResizeableArray arr = make_array(25);
     add_to_array(&arr, 73);
     printf("%p\n%d\n%d\n%d\n", arr.arr, arr.size, arr.capacity, arr.arr[0]);
