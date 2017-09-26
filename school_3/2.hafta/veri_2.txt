@@ -16,3 +16,11 @@ Eger tanimladigimiz degisken 1 byteden uzunsa bu degisken bellekteki bir adrese 
     kalan 2.byte, bellekte 2 adresinden baslar. Stack olacak sekilde ikinci bir degisken tanimladigimizda, bu degiskenin baslangic
     adresi 3.byte'den baslar. cunku ilk 2 byte, ilk tanimladigimiz short degiskenine aittir.
     (Little Endian, Big Endian)
+
+Tumleyen yontemi ile cikarma islemi
+    A - B = C
+    A + (-B) = C
+
+    A = 1001 a) A-B = ? Tumleme yontemi ile yapiniz.
+    B = 0011 b) B-A = ?
+    dersin bu kismini dinlemedin. 2'ye tamamlama olayini arastir amk

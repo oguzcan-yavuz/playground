@@ -1,0 +1,55 @@
+Veri yapisi terimi ile container es anlamlidir.
+    Program = Veri yapilari + algoritma
+
+Bellekteki yerler?
+    Stack
+    Heap
+
+Procedural programming
+
+ASCII
+UNICODE
+UTF
+
+Yorumlayicilar
+    1) Kaynak kodu dogrudan yurutenler (Sql)
+    2) Kaynak kodu once bir ara programa donusturen ve hemen sonra onu
+    yurutenler(Perl, Python, MATLAB, Ruby)
+    3) Derleyicinin on derleme sonunda yarattigi ara programi kaydeden ve onlari istendiginde
+    yurutenler.
+        Java iki ve ucuncu turlerin karmasidir.
+
+    Kaynak kodu dogrudan makine dili => C, C++
+    Kaynak kodu dogrudan bytecode => Java, C#
+    Kaynak kodu ortulu bytecode => Python
+    Kaynak kodu dogrudan yorumlanan (purely interpreted) => Shell, Perl
+
+
+    * Bytecode nedir? Arastir.
+
+Python dilinin iki turlu kullanimi
+1) Program (script) kipi    (Normal py)
+2) Etkilesimli kip          (Idle veya shell python)
+
+
+- dosyada ozniteligi kaldirma
++ dosyada ozniteligi ekleme
+
+Namespace ne yapar?
+Bir program ogelerinin adlarini, aduzayinda tutar. (Dictionary mantigi)
+
+veri yapilari
+1) Referans tipi
+2) Deger (value) tipi
+
+
+
+
+
+
+
+
+
+
+
+
