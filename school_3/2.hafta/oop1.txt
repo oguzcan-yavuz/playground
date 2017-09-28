@@ -1,0 +1,118 @@
+Static = ait olduklari sinifin ornegi olusturulmadan kullanilabilen metotlardir.
+
+Virtual = Bu sinifa ait ust siniftan (baseclass) hazirlanan metotlar alt siniflar tarafindan kullanilmak istendiklerinde bastan tanimlanmak zorundadir.
+Override kelimesi ile alt siniftan (derived class, child class) metotlar tekrar hazirlanmaktadir.
+
+Abstract = Bu sinifa sahip metotlarin tanimlari vardir ancak uygulama kismi bostur. Yani ne yaptiklari tanimlama kisminda yazilmamaktadir. Eger bu metotlar
+kullanilacaksa alt siniflar tarafindan iclerinin doldurulmasi gerekmektedir.
+
+Override = Bu sifat, bu metodun ust sinifa ait olan virtual veya abstract metot oldugunu ve alt siniftan yeniden tanimlandigini gosterir.
+
+Sealed = Bu sifata sahip metotlar alt siniflar tarafindan tekrar tanimlanamaz.
+
+Extern = Bu sifata sahip metot baska dilde yazilmis harici bir dosyaya ait bir metottur. Ornek: DLL
+
+Nesne = Televizyon kumanda ornegi.
+Referans =
+
+Elimizde bir kumandanin olmasi televizyonumuzun oldugu anlamina gelmez. Her durumda bir referans tek basina tanimlanabilir.
+String kumanda; => kumanda referansi su an string nesnesine bagli degildir. Burada yapilan sey referans olusturmaktir. Fakat bellekte uye elemanlari
+tutmak icin yer tahsisi yapilmamistir. Yani nesne olmadan referans hicbir ise yaramaz. Ise yaramasi icin referansin ilgili nesneye baglanmasi gerekir.
+String kumanda = new String("maket");
+String kumanda = ("maket");
+String kumanda (referans) | new String("maket") (nesne)
+
+new keywordu ile bir siniftan birden fazla nesne olusturulabilir.
+
+Depolanan veriler nerede durur?
+
+    1) Yigin (Stack) RAM: Yigin isaretcisi (stack pointer) asagiya dogru inince yeni bir bellek alani olusturur, yukariya dogru
+    cikinca bellek alanini birakir. Yigin uzerinde referanslarin kendileri tutulur.
+
+    2) Heap RAM: Ne zaman bir nesne olusturmak isterseniz new anahtar kelimesi kullanilarak bu alanda bir yer atanir. Derleme zamaninda veriler icin
+    yer tahsisi yapilmaz. Kullanma esnasinda (Run Time) yapilir. Heap alanda yer ayirmak icin harcanan zaman, yigin alanda yer ayirmakta harcanan
+    zamandan daha fazladir. Heap alaninda nesnelerin kendisi durur.
+
+    3) Statik Alan
+    4) Sabit Disk
+
+OOP'un uc prensibi:
+
+1) Sarmalama (Encapsulation)
+2) Kalitim (Inheritance)
+3) Cok bicimlilik (Polymorphism)
+
+Veri Tipleri:
+
+    1) Temel Veri Tipleri
+    2) Kullanici Tanimli Tipler
+    3) Enum sabitleri
+
+Referans Tipler:
+
+    1) Oznitelikli veri tipleri
+    2) Gostericiler (Pointer)
+    3) Arayuzler (Interface)
+
+Sinif Tipleri:
+
+    1) Temsilciler (Delegate)
+    2) Kullanici Tanimli Siniflar
+    3) Boxed Deger Tipi
+
+Siniflar bir veri modelidir. Nesneler ise bu veri modeline bagli kalarak verileri tutan ve model icerisinde tanimlanmis metotlari ve ozellikleri
+kullanmanizi saglayan modele ait referanslardir. Referans tipleri object ve string dir. Herhangi bir nesneyi object turu ile eslestirme islemi Boxing
+olarak adlandirilir. Iki deger tipi nesnesini birbirine esitlerken degiskenlerde saklanan degerler kopyalanarak esitlenir ve bu durumda iki yeni
+bagimsiz nesne elde edilir. Ancak iki referans tipi birbirine esitlendiginde bu nesnelerde tutulan veriler kopyalanmaz. Islem yapilan heap bolgesinde
+ayni adresi gosterecekleri icin birinde yapilan degisiklik digerini de etkileyecektir.
+
+A   (assembly)
+    Class 1
+        public A    (Herkes erisebilir)
+        private B   (Class 1'den erisebilir)
+        protected C (1, 3, 5'den erisilebilir, cunku 3 ve 5, 1'in alt sinifi)
+        internal D  (1, 2, 3'den erisilebilir, cunku ayni assembly icerisindeler)
+        protected internal E (1, 2, 3, 5'den erisilebilir cunku 1, 2, 3 ayni assembly, 5 ise 1'in alt sinifi)
+
+    Class 2
+    Class 3
+
+B   (assembly)
+    Class 4
+    Class 5: 1
+
+Public: Public olarak tanimlanmis bir metot veya ozellige herhangi bir yerden ulasmak mumkundur. Herkese aciktir.
+Private(Default): Bu sifat ile tanimlanmis metot veya ozellige sadece tanimlandigi sinif icerisinden ulasilabilir.
+Protected: Bu metotlara veya ozelliklere tanimlandiklari siniftan ve bu siniftan turetilmis alt siniflardan ulasilabilir.
+Internal: Tanimlandiklari siniftan ve tanimlandiklari sinif ile ayni assembly (A, B) icerisindeki siniflardan erisilebilir.
+Protected Internal: Bunlara kendi siniflarindan veya ayni assembly icerisindeki alt siniflardan ulasilabilir.
+
+const = Sabit
+
+    1) Sabitler tanimlanirken mutlaka deger atamasi yapilmalidir.
+    2) Sabitlerin degerleri derleme asamasinda tanimli olmalidir.
+    3) Sabitler yapilari geregi static'tir.
+
+    Degiskenlerin static olmasi ile metotlarin static olmasi farklidir.
+    public const double PI = 3.14159;
+
+readonly = Sadece okunur
+
+    Yapi olarak sabitlere cok benzer ancak tanimlanma esnasinda deger atanmasi zorunlu degildir.
+    public readonly int x = 3;
+    public readonly int y;
+
+Sonraki hafta: ref ve out, this, get-set, base derived sealed, kalitim, field ve property, Dizi
+
+
+
+
+
+
+
+
+
+
+
+
+
