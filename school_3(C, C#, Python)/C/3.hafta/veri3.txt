@@ -40,4 +40,38 @@ tanimlanan en cok yer kaplayan degisken kadar yer acar, ardindan diger butun deg
 ayni alan icerisinde tanimlar. bu yuzden union veri saklamak icin kullanilmaz. taban donusumleri
 yaparken kullanilabilir.
 
+Struct yapisi cesitli dosyalarin header bilgilerini olusturulan yapiya oturtarak kullanmak icin
+cok isimize yariyor.
+
+*** Bit Maskeleme
+
+    && => mantiksal          & => bitsel ve
+    ! => mantiksal degil     ~ => bitsel degil
+                             ^ => bitsel xor
+    || => mantiksal veya     | => bitsel veya
+
+C dilinde boolean degerler sayisal degerleriyle kontrol edilir. 0 degeri False, 0 olmayan degerler
+de True ifade eder. Bir mantiksal opetor kullandigimizda, operatore verilen degerlerin sayisal
+degerleri kiyaslanir ve True ya da False deger doner.
+
+Bitsel operator kullanirsak, verilen degerin butun bitlerini, operatorun islemine tabi tutar.
+
+    char a, b, c;
+    a = 15;
+    b = 3;
+    c = a & b;  // 00001111
+                // 00000011
+                // and
+                // 00000011 => 3
+
+    c = a && b;     // True & True => True
+
+    MouseMove(... e)
+        e.x
+        e.y
+
+        if(e.button == Mouse.Button.LEFT) {    // bit maskeleme => (buton & MB.LEFT) == MB.LEFT)
+
+        }
+
 
