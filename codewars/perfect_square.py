@@ -7,7 +7,7 @@ def sort_by_perfsq(arr):
 
     def get_sqrts(item):
         count = 0
-        perms = set(permutations(str(item))
+        perms = set(permutations(str(item)))
         for possibility in perms:
             if sqrt((int(''.join(possibility)))).is_integer():
                 count += 1
@@ -16,7 +16,7 @@ def sort_by_perfsq(arr):
     return sorted(arr, key=get_sqrts, reverse=True)
 
 
-print sort_by_perfsq([234, 61, 16, 441, 144, 728])
+print(sort_by_perfsq([234, 61, 16, 441, 144, 728]))
 
 ''' Alternate Solution 1:
 from itertools import permutations

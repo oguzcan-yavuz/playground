@@ -5,4 +5,4 @@ def find_uniq(arr):
 
 test = ['Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a']
 test2 = ['silvia', 'vasili', 'victor']
-print find_uniq(test)
+print(find_uniq(test))

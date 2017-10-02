@@ -15,4 +15,5 @@ def look_and_say_and_sum(n):
         result += int(i)
     return result
 
-print look_and_say_and_sum(55)
+
+print(look_and_say_and_sum(55))

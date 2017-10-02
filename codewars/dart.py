@@ -34,14 +34,15 @@ def get_score(x, y):
     score = scores[hit]
     result = str(score)
     # check distances
-    circle_distances = [[3, [99, 107]], [2, [162, 170]]]    
+    circle_distances = [[3, [99, 107]], [2, [162, 170]]]
     for multiplier, dist in circle_distances:
-    	if dist[0] <= distance <= dist[1]:
+        if dist[0] <= distance <= dist[1]:
             result = ""
             result += ("T" if multiplier == 3 else "D") + str(score)
             return result
     return result
-    
+
+
 ''' ALTERNATIVE SOLUTION
 
 from math import atan2, degrees

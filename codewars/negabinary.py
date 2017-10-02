@@ -16,5 +16,6 @@ def negabinary_to_int(s):
             result += (-2) ** i
     return result
 
-print int_to_negabinary(2731)
-print negabinary_to_int("1110")
+
+print(int_to_negabinary(2731))
+print(negabinary_to_int("1110"))
