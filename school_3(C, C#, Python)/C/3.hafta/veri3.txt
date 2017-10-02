@@ -1,0 +1,43 @@
+Isaretli sayilar, tamsayilarin bir alt kumesidir. Yani tamsayilar; isaretli ve isaretsiz
+olarak ikiye ayrilir.
+
+Big Endian ve Little Endian, dosya okuma islemleri sirasinda gerekli bir bilgi haline geliyor.
+
+Little Endian ve Big Endian kavramlari; yumurtanin kucuk tarafini kiran koyluler vs buyuk tarafini
+kiran koyluler
+
+Stack bellekte, en ustteki veriyi pull yaparak cekeriz veya push yaparak uste yeni bir deger
+ekleriz. Stack bellekte, aradaki verilere ulasamayiz, yalnizca en ustteki veriyi cekebilir ya da
+yeni bir veriyi en uste ekleyebiliriz.
+
+C'de dizinin son elemani \0 ile biter. Bu eleman bize dizinin sonlandigini belirtir.
+
+C'de dizinin elemanlari bellege ardisik olarak yerlesir. Bu sayede pointer'larla islem yapmak
+kolaylasir.
+
+C'de string olusturmak icin iki boyutlu char dizisi kullanilir.
+
+    char *str[40];      // statik (boyutunu run-time'da degistiremeyiz.)
+    char **str = malloc(sizeof(char) * 40);     // dinamik (boyutunu run-time'da degistirebiliriz.)
+
+C'de birden fazla boyutlu diziler acmak icin ard arda koseli parantezler de kullanabiliriz.
+
+    int xyz[10][20][30];
+
+C'de nesne yonelimli programlama destegi olmadigi icin, farkli veri yapisindaki degiskenleri
+birbirlerine baglamak icin struct(structure) kullaniriz.
+
+    struct tarih {
+        unsigned char gun;
+        unsigned char ay;
+        short int yil;
+    }
+
+    struct tarih dogum_gunleri[2000];
+
+C'de struct, icerisindeki yapilari ardisik olarak paketler. union'un farki ise, icerisinde
+tanimlanan en cok yer kaplayan degisken kadar yer acar, ardindan diger butun degiskenleri
+ayni alan icerisinde tanimlar. bu yuzden union veri saklamak icin kullanilmaz. taban donusumleri
+yaparken kullanilabilir.
+
+
