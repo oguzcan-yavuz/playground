@@ -74,4 +74,6 @@ Bitsel operator kullanirsak, verilen degerin butun bitlerini, operatorun islemin
 
         }
 
+Hocanin ornek sinav sorusu: Bir sayinin ucuncu bitinin 0 olup olmadigini kontrol eden kodu yaziniz.
 
+NOT: bitleri saymaya 0'dan basliyoruz.
