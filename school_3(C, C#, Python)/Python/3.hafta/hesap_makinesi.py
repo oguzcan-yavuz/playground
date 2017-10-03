@@ -46,16 +46,16 @@ class SimpleCalculator(QWidget):
         # Reset Button
         self.btn_c.move(140, 180)
         self.btn_c.resize(80, 40)
-        # Window Title
-        self.setWindowTitle('Basit Hesap Makinesi')
-        # Initiate UI
-        self.show()
         # connect the signals to the slots
         self.btn_add.clicked.connect(self.addition)
         self.btn_sub.clicked.connect(self.subtraction)
         self.btn_mul.clicked.connect(self.multiplication)
         self.btn_div.clicked.connect(self.division)
         self.btn_c.clicked.connect(self.reset)
+        # Window Title
+        self.setWindowTitle('Basit Hesap Makinesi')
+        # Initiate UI
+        self.show()
 
     # Create the actions
     @pyqtSlot()
@@ -83,7 +83,6 @@ class SimpleCalculator(QWidget):
     def division(self):
         self.result /= float(self.textbox.displayText())
         self.current.setText(str(self.result))
-        # self.textbox.setText(str(self.result))
         self.textbox.setText("")
         self.textbox.setFocus()
 
