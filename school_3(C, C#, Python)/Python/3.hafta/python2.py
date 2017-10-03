@@ -23,9 +23,22 @@ print(test is "sa")
 
 
 # instance example
-class TestClass(object):
-    pass
+class TestClass:
+    def __init__(self):
+        pass
 
 
 test = TestClass()
 print(type(test))       # instance
+
+
+import random
+mod = random.randrange(100)
+if mod == 0 or mod == 2:
+    print mod
+else:
+    print "yanlis mod degeri"
+
+
+
+

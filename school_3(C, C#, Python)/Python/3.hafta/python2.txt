@@ -22,3 +22,6 @@ Hocanin gosterdigi fonksiyonlar:
 a == b vs a is b:
     ==      => Equality (esitlik kontrolu yapar. veri tipini de kontrol eder.)
     is      => id(a) == id(b)   (ram'deki adreslerinin ayni olup olmadigini kontrol eder.)
+
+
+HAFTAYA HESAP MAKINESI YAP
