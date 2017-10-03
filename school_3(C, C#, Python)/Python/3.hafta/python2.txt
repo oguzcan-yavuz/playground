@@ -1,0 +1,24 @@
+Python2 kullanirken python 3 ozelliklerini __future__ kutuphanesini import ederek kullanabiliriz
+bolme islemlerinin tamsayi olmamasi durumunda ondalikli sonuc vermesi icin:
+    from __future__ import division
+
+Python2 icin input alma fonksiyonlari:
+    raw_input()     => string
+    input()         => int
+
+    Python3'de raw_input() yok, input() var. string aliyor.
+
+Hocanin gosterdigi fonksiyonlar:
+
+    len()
+    index()
+    count()
+    upper()
+    lower()
+    startswith()    => bool dondurur
+    endswith()
+    split()
+
+a == b vs a is b:
+    ==      => Equality (esitlik kontrolu yapar. veri tipini de kontrol eder.)
+    is      => id(a) == id(b)   (ram'deki adreslerinin ayni olup olmadigini kontrol eder.)
