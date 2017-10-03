@@ -15,8 +15,6 @@ C'de dizinin son elemani \0 ile biter. Bu eleman bize dizinin sonlandigini belir
 C'de dizinin elemanlari bellege ardisik olarak yerlesir. Bu sayede pointer'larla islem yapmak
 kolaylasir.
 
-C'de string olusturmak icin iki boyutlu char dizisi kullanilir.
-
     char *str[40];      // statik (boyutunu run-time'da degistiremeyiz.)
     char **str = malloc(sizeof(char) * 40);     // dinamik (boyutunu run-time'da degistirebiliriz.)
 

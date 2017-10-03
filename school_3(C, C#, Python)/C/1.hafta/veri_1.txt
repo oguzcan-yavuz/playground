@@ -8,8 +8,6 @@ Dr. Rıfat ÇÖLKESEN (papatya yayınları)
 
 ------------------------------
 
-http://www.alexeyshmalko.com/2014/using-vim-as-c-cpp-ide/
-
 Konu basliklari
 
 big(0)
@@ -96,8 +94,3 @@ Programlama Dilleri
     Nesne yonelimli         (C++, C#, Java)
     Mantik yonelimli        (Prolog)
     Gorev yonelimli         (SQL, Verilog, Mathematica)
-
-
-
-
-

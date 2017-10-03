@@ -25,3 +25,4 @@ a == b vs a is b:
 
 
 HAFTAYA HESAP MAKINESI YAP
+    DONE!

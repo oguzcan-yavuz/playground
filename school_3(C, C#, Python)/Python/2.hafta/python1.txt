@@ -41,15 +41,3 @@ Bir program ogelerinin adlarini, aduzayinda tutar. (Dictionary mantigi)
 veri yapilari
 1) Referans tipi
 2) Deger (value) tipi
-
-
-
-
-
-
-
-
-
-
-
-

@@ -12,8 +12,8 @@ Sealed = Bu sifata sahip metotlar alt siniflar tarafindan tekrar tanimlanamaz.
 
 Extern = Bu sifata sahip metot baska dilde yazilmis harici bir dosyaya ait bir metottur. Ornek: DLL
 
-Nesne = Televizyon kumanda ornegi.
-Referans =
+Nesne = Televizyon
+Referans = Kumanda
 
 Elimizde bir kumandanin olmasi televizyonumuzun oldugu anlamina gelmez. Her durumda bir referans tek basina tanimlanabilir.
 String kumanda; => kumanda referansi su an string nesnesine bagli degildir. Burada yapilan sey referans olusturmaktir. Fakat bellekte uye elemanlari
@@ -103,16 +103,3 @@ readonly = Sadece okunur
     public readonly int y;
 
 Sonraki hafta: ref ve out, this, get-set, base derived sealed, kalitim, field ve property, Dizi
-
-
-
-
-
-
-
-
-
-
-
-
-
