@@ -66,3 +66,6 @@ Siniflarin tekrar kullanimi (inheritance(kalitim))
         aa.HareketEt();
         aa.Dur();
     }
+
+    Yeni tureyen siniftaki global alanlar, metotlara otomatik olarak sahip olur.
+        (private haric)
