@@ -69,3 +69,28 @@ Siniflarin tekrar kullanimi (inheritance(kalitim))
 
     Yeni tureyen siniftaki global alanlar, metotlara otomatik olarak sahip olur.
         (private haric)
+
+
+Inheritance's uses:
+    1) implement base class
+    2) implement derived class
+    3) initialize base classes from derived classes
+    4) how to call base class member
+    5) how to hide base class member
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
