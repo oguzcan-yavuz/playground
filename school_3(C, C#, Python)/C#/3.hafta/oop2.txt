@@ -1,0 +1,68 @@
+camel case
+pascal case
+
+fields(alanlar): Tanimlanirken camel case kullanilir. Ilk kelimenin ilk harfi kucuk, diger
+kelimelerin ilk harfi buyuk yazilir.
+
+property(ozellikler): Ozellikler icin pascal case kullanilir. Butun kelimelerin ilk harfi
+buyuk yazilir.
+
+Degisken isimleri field olarak gecer. Bir field'in okunabilirligini veya yazilabilirligini
+belirtmek icin public olarak bir erisim belirtilir.
+
+    private int customerName;   // field (camelCase)
+
+    public int CustomerName {   // property (PascalCase)
+        get {
+            return customerName
+        }
+        set {
+            customerName = Value;
+        }
+    }
+
+ref ve out
+
+    deger tipleri metotlara bit bit kopyalanarak gecirilir. int turunden bir nesneyi bir metoda
+    parametre olarak gecirip metodun icinde bu parametreyi degistirmek ana degiskeni etkilemez
+    Bazi durumlarda deger tiplerini referans olarak aktarmak isterseniz, ref ve out kelimelerin
+    kullanabilirsiniz.
+
+    ref     => ilk deger atamasi zorunlu
+    out     => ilk deger atamasi zorunlu degil
+    this    => nesneler uzerinde metotlar cagirilirken metotlara gizlice ilgili nesnelerin
+                referanslari gecirilir. this kelimesi icinde bulunulan sinifin o andaki
+                ornegini temsil etmektedir. this kelimesi icinde bulunulan nesneye ait bir
+                referans dondurur. bu sayede nesnelere ait global alanlara erisim imkani
+                saglar.
+
+
+Siniflarin tekrar kullanimi (inheritance(kalitim))
+    class Araba {   // base class
+        private static int motor_gucu = 3600;   // field
+
+        public void calis() {
+            Console.WriteLine("Motor Calisiyor");
+        }
+
+        public void dur() {
+            Console.WriteLine("Motor durdu.");
+        }
+    }
+    class AileArabasi {     // derived class
+        private Araba m = new Araba();
+        public void HareketEt() {
+            m.calis();
+            Console.WriteLine("Aile arabasi calisiyor");
+        }
+        public void Dur() {
+            m.dur();
+            Console.WriteLine("Aile arabasi durdu");
+        }
+    }
+
+    public static void Main(string[] args) {
+        AileArabasi aa = new AileArabasi();
+        aa.HareketEt();
+        aa.Dur();
+    }
