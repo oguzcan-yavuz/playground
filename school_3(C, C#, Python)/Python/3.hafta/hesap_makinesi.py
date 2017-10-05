@@ -58,40 +58,37 @@ class SimpleCalculator(QWidget):
         self.show()
 
     # Create the actions
+
+    def reset_textbox(self, c=False):
+        self.current.setText(str(self.result) if c is False else "0.0")
+        self.textbox.setText("")
+        self.textbox.setFocus()
+
+
     @pyqtSlot()
     def addition(self):
         self.result += float(self.textbox.displayText())
-        self.current.setText(str(self.result))
-        self.textbox.setText("")
-        self.textbox.setFocus()
+        self.reset_textbox()
 
     @pyqtSlot()
     def subtraction(self):
         self.result -= float(self.textbox.displayText())
-        self.current.setText(str(self.result))
-        self.textbox.setText("")
-        self.textbox.setFocus()
+        self.reset_textbox()
 
     @pyqtSlot()
     def multiplication(self):
         self.result *= float(self.textbox.displayText())
-        self.current.setText(str(self.result))
-        self.textbox.setText("")
-        self.textbox.setFocus()
+        self.reset_textbox()
 
     @pyqtSlot()
     def division(self):
         self.result /= float(self.textbox.displayText())
-        self.current.setText(str(self.result))
-        self.textbox.setText("")
-        self.textbox.setFocus()
+        self.reset_textbox()
 
     @pyqtSlot()
     def reset(self):
         self.result = 0.0
-        self.current.setText("0.0")
-        self.textbox.setText("")
-        self.textbox.setFocus()
+        self.reset_textbox(c=True)
 
 
 def main():
