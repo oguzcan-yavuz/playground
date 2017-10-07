@@ -18,9 +18,9 @@ class Seri:
 
     def gruplandirilmis_seri(self, retry=0):
         maximum, minimum = self.data[-1], self.data[0]
-        aciklik = maximum - minimum + retry
-        grup_genisligi = floor(aciklik / self.grup_sayisi + 1)
-        last_group_start = self.data[0] + (grup_genisligi * (self.grup_sayisi- 1))
+        aciklik = maximum - minimum
+        grup_genisligi = floor(aciklik / self.grup_sayisi + 1) + retry
+        last_group_start = self.data[0] + (grup_genisligi * (self.grup_sayisi - 1))
         if maximum < last_group_start or maximum >= last_group_start + grup_genisligi:
             return self.gruplandirilmis_seri(retry=1) if retry == 0 else "Gruplandirma yapilamiyor."
         return [
@@ -60,6 +60,7 @@ class AritmetikOrtalama(Seri):
         temsili_data = self.temsili_datalar(gruplandirilmis_seri)
         frekans_serisi = self.frekans_serisi(gruplandirilmis_seri)
         result = 0
+        # TODO: check if this needs to be zipped with x[1] of gruplandirilmis_seri
         data = zip(temsili_data, [x[1] for x in gruplandirilmis_seri])
         for i in data:
             result += i[0] * i[1]
