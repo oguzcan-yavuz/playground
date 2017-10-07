@@ -29,7 +29,8 @@ class TestClass:
 
 
 test = TestClass()
-print(type(test))       # instance
+print(type(test))               # <type 'instance'>
+print(type(test.__class__))     # <type 'classobj'>
 
 
 import random
