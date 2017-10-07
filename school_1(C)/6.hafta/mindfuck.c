@@ -28,7 +28,8 @@ int main() {
 //        printf(&spaces[2 * n - i - 1]);
 //        printf(&stars[(n * 2) - (2 * (2 * n - i))]);
 //    }
- 
+    free(stars);
+    free(spaces);
     return 0;
 }
 
