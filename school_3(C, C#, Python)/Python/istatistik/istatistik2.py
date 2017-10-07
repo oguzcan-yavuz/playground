@@ -16,11 +16,13 @@ class Seri:
         else:
             return [[[g0, g1], sum([self.data.count(i) for i in range(g0, g1)])] for g0, g1 in gruplar]
 
-    def grup_kontrol(self, maximum, aciklik, retry=1):
+    def gruplandirilmis_seri(self, retry=0):
+        maximum, minimum = self.data[-1], self.data[0]
+        aciklik = maximum - minimum + retry
         grup_genisligi = floor(aciklik / self.grup_sayisi + 1)
         last_group_start = self.data[0] + (grup_genisligi * (self.grup_sayisi- 1))
         if maximum < last_group_start or maximum >= last_group_start + grup_genisligi:
-            return self.grup_kontrol(maximum, aciklik + 1, retry - 1) if retry > 0 else "Gruplandirma yapilamiyor."
+            return self.gruplandirilmis_seri(retry=1) if retry == 0 else "Gruplandirma yapilamiyor."
         return [
             [
                 self.data[0] + (i * grup_genisligi) + i,
@@ -44,14 +46,6 @@ class Seri:
     def birikimli_azalan(self, frekanslar):
         return [[sum([frekanslar[j][1] for j in range(i, -1, -1)]) for i in range(self.grup_sayisi - 1, -1, -1)]]
 
-    def gruplandirilmis_seri(self):
-        minimum = self.data[0]
-        maximum = self.data[-1]
-        aciklik = maximum - minimum
-        gruplar = self.grup_kontrol(maximum, aciklik)
-        temsili_data = self.temsili_datalar(gruplar)
-        return gruplar, temsili_data
-
 
 class AritmetikOrtalama(Seri):
     def basit(self):
@@ -62,8 +56,9 @@ class AritmetikOrtalama(Seri):
         return sum([s * f for s, f in frekans_serisi]) / sum([f for s, f in frekans_serisi])
 
     def gruplandirilmis(self):
-        gruplandirilmis_seri, temsili_data = self.gruplandirilmis_seri()
-        frekans_serisi = self.frekans_serisi(gruplar=gruplandirilmis_seri)
+        gruplandirilmis_seri = self.gruplandirilmis_seri()
+        temsili_data = self.temsili_datalar(gruplandirilmis_seri)
+        frekans_serisi = self.frekans_serisi(gruplandirilmis_seri)
         result = 0
         data = zip(temsili_data, [x[1] for x in gruplandirilmis_seri])
         for i in data:

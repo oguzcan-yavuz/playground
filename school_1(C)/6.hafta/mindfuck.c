@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
  
 int main() {
     int i = 0, n = 5;
@@ -17,6 +18,16 @@ int main() {
         printf(&spaces[yildiz - 1]);
         printf(&stars[(n * 2) - (2 * yildiz)]);
     }
+
+//    for(i = 1; i <= n; i++) {
+//        printf(&spaces[i - 1]);
+//        printf(&stars[(n * 2) - (2 * i)]);
+//    }
+//
+//    for(i; i < n * 2; i++) {
+//        printf(&spaces[2 * n - i - 1]);
+//        printf(&stars[(n * 2) - (2 * (2 * n - i))]);
+//    }
  
     return 0;
 }
