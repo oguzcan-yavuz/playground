@@ -1,4 +1,4 @@
-from math import ceil
+from math import floor
 
 
 class Seri:
@@ -16,56 +16,40 @@ class Seri:
         else:
             return [[[g0, g1], sum([self.data.count(i) for i in range(g0, g1)])] for g0, g1 in gruplar]
 
-    def gruplandir(self, grup_genisligi):
-        gruplar, alt_sinir = [], self.data[0]
-        for i in range(self.grup_sayisi):
-            ust_sinir = alt_sinir + grup_genisligi - 1
-            gruplar.append([alt_sinir, ust_sinir])
-            alt_sinir += grup_genisligi
-        return gruplar
-
-    def grup_kontrol(self, maximum, aciklik):
-        grup_genisligi = aciklik / self.grup_sayisi
-        if type(grup_genisligi) is int:
-            grup_genisligi += 1
-        grup_genisligi = ceil(grup_genisligi)
-        sonuc = self.gruplandir(grup_genisligi)
-        son_grup_menzili = range(sonuc[-1][0], sonuc[-1][1])
-        if maximum not in son_grup_menzili:
-            grup_genisligi += 1
-            sonuc = self.gruplandir(grup_genisligi)
-        if maximum not in son_grup_menzili:
-            return "Gruplandirma yapilamiyor!"
-        else:
-            return sonuc
+    def grup_kontrol(self, maximum, aciklik, retry=1):
+        grup_genisligi = floor(aciklik / self.grup_sayisi + 1)
+        last_group_start = self.data[0] + (grup_genisligi * (self.grup_sayisi- 1))
+        if maximum < last_group_start or maximum >= last_group_start + grup_genisligi:
+            return self.grup_kontrol(maximum, aciklik + 1, retry - 1) if retry > 0 else "Gruplandirma yapilamiyor."
+        return [
+            [
+                self.data[0] + (i * grup_genisligi) + i,
+                self.data[0] + ((i + 1) * grup_genisligi) + i
+            ] for i in range(self.grup_sayisi)
+        ]
 
     def temsili_datalar(self, gruplar):
         return [(g[0] + g[1]) / 2 for g in gruplar]
 
     def kismi_frekans(self, frekanslar):
-        return [(f / self.toplam_frekans) for k, f in frekanslar]
+        return [(f / self.toplam_frekans) for _, f in frekanslar]
 
     def kumulatif_frekans(self, frekanslar):
         return [[sum([frekanslar[j][1] for j in range(i + 1)]) / self.toplam_frekans] for i in range(self.grup_sayisi)]
 
+    # TODO: check if this function is for cumilative frequencies or partial frequency
     def kumulatif_relatif_frekans(self, kismi_frekanslar):
         return [kf / self.toplam_frekans for kf in kismi_frekanslar]
 
     def birikimli_azalan(self, frekanslar):
         return [[sum([frekanslar[j][1] for j in range(i, -1, -1)]) for i in range(self.grup_sayisi - 1, -1, -1)]]
 
-    # bunu ayri class haline getir, seriyi miras alsin.
-    def gruplandirilmis_seri(self, temsili=True, kismi=True, kumulatif=True, kumulatif_relatif=True, birikimli_az=True):
+    def gruplandirilmis_seri(self):
         minimum = self.data[0]
         maximum = self.data[-1]
         aciklik = maximum - minimum
         gruplar = self.grup_kontrol(maximum, aciklik)
         temsili_data = self.temsili_datalar(gruplar)
-        gruplandirilmis_frekanslar = self.frekans_serisi(gruplar=gruplar)
-        kismi_frekanslar = self.kismi_frekans(gruplandirilmis_frekanslar)
-        kumulatif_frekanslar = self.kumulatif_frekans(gruplandirilmis_frekanslar)
-        kum_rel_frekanslar = self.kumulatif_relatif_frekans(kismi_frekanslar)
-        birikimli_azalanlar = self.birikimli_azalan(gruplandirilmis_frekanslar)
         return gruplar, temsili_data
 
 
