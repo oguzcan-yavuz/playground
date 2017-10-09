@@ -23,9 +23,10 @@ int main() {
     printf("sonuc: %.3f\n", p(10, 3));
 
     // veri yapisi olusturmak icin typedef kullanim ornegi
-    typedef int tamsayi;   // int tipinden, tamsayi adinda yeni bir veri yapisi olusturduk
-    tamsayi a = 5;         // int a = 5; yerine tamsayi a = 5; yaziyoruz.
-    printf("typedef: %d\n", a);
+    typedef int tamsayi[10];   // int tipinden, tamsayi adinda yeni bir veri yapisi olusturduk
+    tamsayi a;         // int a[10]; yerine tamsayi a; yaziyoruz.
+    a[0] = 13;
+    printf("typedef: %d\n", a[0]);
 
     // fonksiyonlari diziden cagirmak
     typedef void (*FI)(int, float);     // FI adli yeni bir veri yapisi tanimlar

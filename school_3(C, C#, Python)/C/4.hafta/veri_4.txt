@@ -1,0 +1,26 @@
+Pointer kullandigimizda compiler bizi takip edemez. Bu yuzden yuksek seviyeli programlama dillerinde pointer'lar pek
+kullanilmaz. C'de ise pointer'lar butun bilgisayar bellegini onumuze sunar.
+
+Pointer kullaniminda kullanilan iki operator:
+    *   => pointer tanimlamak icin veya zaten tanimlanan pointer'in icindeki veriye erismek icin kullanilir.
+    &   => degisken adresini dondurur.
+
+Pointer'larin veri yapilarinin olmasinin sebebi, pointer aritmetiginde, bir sonraki degere ulasabilmek icin RAM'de ne kadar
+byte yer degistireceklerini belirtmek icin.
+
+C'de pointerlari deger atamasi yapmadan kullanamayiz.
+
+Global degiskenlerin degeri default olarak 0'dir ancak local degiskenlerin default degeri farkli olabilir.
+
+Compiler, degiskenleri tanimladigimiz sirada bellege yerlestirmeyebilir.
+
+Bir JPEG dosyasi RAM'de nasil saklanir?
+    64x64 bir icon
+    char *x, *y;
+    a = x.64 + y;
+
+C'de diziler bellekte ardisik olarak tutulur. Bu yuzden bir dizinin adresini almak icin 0.elemaninin adresini aliriz.
+Eger sadece dizi adini yazarsak bu da 0. elemanin adresine esittir. (&dizi[0] = dizi)
+
+Dizilerin degerini pointer kullanarak degistirirsek 0.elemanin adresini kaybedebiliriz. Sadece 0.elemanin adresini tutan
+baska bir pointer daha tanimlayabiliriz.

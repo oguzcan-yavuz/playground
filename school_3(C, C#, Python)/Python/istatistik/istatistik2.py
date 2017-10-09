@@ -68,9 +68,9 @@ class AritmetikOrtalama(Seri):
 
 
 notlar = [24, 80, 52, 65, 40, 40, 65, 50, 36, 60, 75, 40, 60, 95, 50, 30, 52, 24, 40, 75]
-hesap = AritmetikOrtalama(notlar, 5)
+aritmetik = AritmetikOrtalama(notlar, 5)
 
-print("basit seri: {0}".format(hesap.basit_seri()))
-print("frekans serisi: {0}".format(hesap.frekans_serisi()))
-print("gruplandirilmis seri: {0}".format(hesap.gruplandirilmis_seri()))
-print(hesap.gruplandirilmis())
+print("basit seri: {0}".format(aritmetik.basit_seri()))
+print("frekans serisi: {0}".format(aritmetik.frekans_serisi()))
+print("gruplandirilmis seri: {0}".format(aritmetik.gruplandirilmis_seri()))
+print(aritmetik.gruplandirilmis())
