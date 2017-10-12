@@ -1,0 +1,29 @@
+Encapsulation(Kapsulleme):
+    Verinin sarmalanarak korunmasi.
+    Field -> camelCase
+    Property -> PascalCase
+
+    Private field'a public property yazilir.
+
+Odev: C# ve python'dan birer tane proje al. Kagida alacagin projeyi yaz. Program en az 100 satir olacak. Finale 1 hafta kala sunum yapilacak. 30 puan.
+
+LOL: https://gist.github.com/jasonrudolph/6065289
+    kimler commit yapiyor, hangi araliklarda yapiiyor. kimler bir repodaki caliskan yazilimci, digerleri tembellik yapiyor?
+
+Polymorphism: Alt siniflar turetildikleri sinifin tum ozelliklerine sahiptir. Turetilen alt sinifa ait nesneyi ana siniftaki referansa baglamak
+upcasting islemidir.
+
+        // Banka banka1, banka2 = new Banka();
+        // VadeliHesap vade1, vade2 = new VadeliHesap();
+        // banka1 = vade2;                     // upcasting
+        // vade1 = banka2;                     // downcasting. bu kullanim illegaldir. Compile time'da hata verir.
+        // vade1 = (VadeliHesap) banka2;       // downcasting. bu kullanim illegaldir. Run time'da hata verir.
+        // vade1 = (VadeliHesap) banka1;       // downcasting. LEGAL. banka1 zaten daha onceden vade2'e upcasting edildigi icin LEGAL.
+
+Override: Ayni fonksiyonlar, ayni donus tipleri     (Polymorphism)
+Overload: Ayni fonksiyonlar, farkli donus tipleri
+    Late-Binding(Gec Baglama): Eger bir metodun ya da yordamin hangi nesneye ait oldugu calisma aninda belli oluyorsa bu olaya gec baglama denir.
+    Early-Binding(Erken Baglama): Hangi nesnenin ya da hangi yordamin cagrilacaginin derleme aninda bilinmesidir.
+
+Java MVC Design Pattern Example: https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm
+
