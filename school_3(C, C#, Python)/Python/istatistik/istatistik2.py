@@ -1,3 +1,4 @@
+# coding=utf-8
 from math import floor
 
 
@@ -8,15 +9,25 @@ class Seri:
         pass
 
     def basit_seri(self, data):
+        """Verilen veriyi küçükten büyüğe sıralar.
+        :param data: Tek boyutlu bir liste.
+        :returns: Verilen listenin küçükten büyüğe sıralanmış hali."""
         return sorted(data)
 
-    # params:
-    # gruplar: eger data gruplandirilmis_seri datasi ise gruplar parametresini
-    # True yap, eger False(default) ise tek boyutlu bir dizi icin calisir.
     def frekans_serisi(self, data, gruplar=False):
-        # TODO: bu fonksiyon set dondursun.
-        if not gruplar:
-            return [[i, data.count(i)] for i in data]
+        """Verilen verinin frekans serisini döndürür.
+        :param data: Default olarak tek boyutlu bir liste bekler.
+        :param gruplar: data'nın gruplandırılmış olup olmadığını belirtir.
+        :returns: gruplar parametresi False ise iki boyutlu, her bir elemanı [veri_noktası, frekans]
+            olacak şekilde iki elemanlı tuple olan bir set döndürür.
+
+            gruplar parametresi True ise...
+        """
+        if gruplar is False:
+            # TODO: butun listeleri tuple'a donusturmek mantikli mi? yoksa sadece burada
+            # mi tuple kalsin? yoksa uniq fonksiyonu olusturmak mi daha mantikli?
+            return set([(i, data.count(i)) for i in data])
+            # return [[i, data.count(i)] for i in data]
         else:
             return [[[g0, g1], sum([data.count(i) for i in range(g0, g1)])] for g0, g1 in data]
 
@@ -25,6 +36,11 @@ class Seri:
     # retry = genislik hesabinda yukari yuvarlama basarisiz olursa bir fazlasini sadece
     # bir kere denemek icin fonksiyonun kendi icerisinde recursive olarak kullandigi bir parametre.
     def gruplandirilmis_seri(self, data, grup_sayisi, retry=0):
+        """ TODO: 1) kumulatif_frekans gibi fonk'lara bu fonksiyon uzerinden erismek mi
+        2) yoksa direk erisebilmek mi daha mantikli? (su an bu sekilde)
+        Eger ilki mantikliysa: gruplandirilmis seri fonk.una bagli fonksiyonlari bu fonk.da
+        default parametre haline getirip, class icerisinde _ ile private yap? """
+
         maximum, minimum = data[-1], data[0]
         aciklik = maximum - minimum
         genislik = floor(aciklik / grup_sayisi + 1) + retry
@@ -85,6 +101,26 @@ class AritmetikOrtalama(Seri):
         return result / sum([f for g, f in frekans_serisi])
 
 
+class Mod(Seri):
+    def basit_mod_hesapla(self, data):
+        frekanslar = self.frekans_serisi(data)
+        max_frekans = max(frekanslar, key=lambda n: n[1])
+        modlar = []
+        for data, frekans in frekanslar:
+            if frekans == max_frekans:
+                modlar.append(data)
+        return modlar if len(data) != len(modlar) else "Tüm verilerin frekansı eşit olduğundan mod yoktur!"
+
+    def grup_mod_hesapla(self, data):
+        frekanslar = self.frekans_serisi(data, gruplar=True)
+        return frekanslar
+
+
+class Medyan(Seri):
+    pass
+
+
+
 notlar = [24, 80, 52, 65, 40, 40, 65, 50, 36, 60, 75, 40, 60, 95, 50, 30, 52, 24, 40, 75]
 aritmetik = AritmetikOrtalama()
 
@@ -94,4 +130,5 @@ aritmetik = AritmetikOrtalama()
 # print(aritmetik.gruplandirilmis())
 print(aritmetik.gruplandirilmis_seri(notlar, 5))
 frekans_serisi = aritmetik.frekans_serisi(notlar)
-print(aritmetik.kumulatif_frekans(frekans_serisi, len(frekans_serisi), 6))
+print(frekans_serisi)
+# print(aritmetik.kumulatif_frekans(frekans_serisi, len(frekans_serisi), 6))
