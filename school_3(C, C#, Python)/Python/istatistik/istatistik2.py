@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 from math import floor
 
 
@@ -118,7 +118,6 @@ class Mod(Seri):
 
 class Medyan(Seri):
     pass
-
 
 
 notlar = [24, 80, 52, 65, 40, 40, 65, 50, 36, 60, 75, 40, 60, 95, 50, 30, 52, 24, 40, 75]
