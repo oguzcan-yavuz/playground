@@ -3,7 +3,6 @@ from math import floor
 
 
 class Seri:
-    # TODO: yorumlari docstring'e(fonksiyon icerisinde """uctirnak""" icerisine yazilan yorumlar) cevir.
     # TODO: butun fonksiyonlari tekrar dene ve duzgunce dokumantasyonunu yap, unutuyorsun.
     def __init__(self):
         pass
@@ -11,16 +10,16 @@ class Seri:
     def basit_seri(self, data):
         """Verilen veriyi küçükten büyüğe sıralar.
         :param data: Tek boyutlu bir liste.
-        :returns: Verilen listenin küçükten büyüğe sıralanmış hali."""
+        :returns: Verilen listenin küçükten büyüğe sıralanmış hali.
+        """
         return sorted(data)
 
     def frekans_serisi(self, data, gruplar=False):
         """Verilen verinin frekans serisini döndürür.
-        :param data: Default olarak tek boyutlu bir liste bekler.
-        :param gruplar: data'nın gruplandırılmış olup olmadığını belirtir.
-        :returns: gruplar parametresi False ise iki boyutlu, her bir elemanı [veri_noktası, frekans]
-            olacak şekilde iki elemanlı tuple olan bir set döndürür.
-
+        :param data: Tek boyutlu bir liste veya gruplandırılmış seri.
+        :param gruplar: Eğer data gruplandırılmış seri ise bu parametre True yapılmalıdır.
+        :returns: Gruplar parametresi False ise iki boyutlu, her bir elemanı
+        (veri_noktası, frekans) olacak şekilde iki elemanlı tuple olan bir set döndürür.
             gruplar parametresi True ise...
         """
         if gruplar is False:
@@ -31,33 +30,40 @@ class Seri:
         else:
             return [[[g0, g1], sum([data.count(i) for i in range(g0, g1)])] for g0, g1 in data]
 
-    # params:
-    # grup_sayisi: verinin kac gruba ayrilacagini belirler
-    # retry = genislik hesabinda yukari yuvarlama basarisiz olursa bir fazlasini sadece
-    # bir kere denemek icin fonksiyonun kendi icerisinde recursive olarak kullandigi bir parametre.
     def gruplandirilmis_seri(self, data, grup_sayisi, retry=0):
-        """ TODO: 1) kumulatif_frekans gibi fonk'lara bu fonksiyon uzerinden erismek mi
-        2) yoksa direk erisebilmek mi daha mantikli? (su an bu sekilde)
-        Eger ilki mantikliysa: gruplandirilmis seri fonk.una bagli fonksiyonlari bu fonk.da
-        default parametre haline getirip, class icerisinde _ ile private yap? """
-
+        """Verilen verinin istenilen grup sayısında gruplandırılmış halini döndürür.
+        Eğer istenilen sayıda gruplandırma yapılamıyorsa 'Gruplandırılma yapılamıyor!'
+        string'ini döndürür
+        :param data: Tek boyutlu veri.
+        :param grup_sayisi: Verinin bölünmek istendiği grup sayısı
+        :param retry: Fonksiyonun kendi içerisinde genişliği kontrol etmek için kullandığı
+        fonksiyonun kendisini çağırma sayısını tutan default parametre. Dokunmayın.
+        :returns: İstenilen sayıda gruplandırılmış verinin liste halindeki alt ve üst sınırları
+        her bir elemanını oluşturan bir liste.
+        """
         maximum, minimum = data[-1], data[0]
         aciklik = maximum - minimum
         genislik = floor(aciklik / grup_sayisi + 1) + retry
-        last_group_start = data[0] + (genislik * (grup_sayisi - 1))
-        if maximum < last_group_start or maximum >= last_group_start + genislik:
-            return self.gruplandirilmis_seri(data, grup_sayisi, retry=1) if retry == 0 else "Gruplandirma yapilamiyor."
+        son_grup_baslangici = data[0] + (genislik * (grup_sayisi - 1))
+        if maximum < son_grup_baslangici or maximum >= son_grup_baslangici + genislik:
+            return self.gruplandirilmis_seri(data, grup_sayisi, retry=1) if retry == 0 else "Gruplandırma yapılamıyor!"
         return [[data[0] + (i * genislik) + i, data[0] + ((i + 1) * genislik) + i] for i in range(grup_sayisi)]
 
-    # params:
-    # gruplar: gruplandirilmis_seri fonksiyonundan donen bir deger bekler
     def temsili_datalar(self, gruplar):
+        """Gruplandırılmış serideki her bir grup için temsili değeri hesaplar.
+        :param gruplar: Gruplandırılmış seri.
+        :returns: Her grubun indexine karşılık gelecek şekilde temsili değerlerini tutan tek
+        boyutlu bir dizi.
+        """
         return [(g[0] + g[1]) / 2 for g in gruplar]
 
     # params:
     # frekans_serisi: frekans_serisi(gruplar=False) fonksiyonundan donen bir deger bekler
     # toplam_frekans: toplam data sayisi.
     def kismi_frekans(self, frekans_serisi, toplam_frekans):
+        # TODO: toplam frekansi arguman olarak vermek mi yoksa fonk. icinde hesaplamak mi?
+        """Kısmi frekans, frekans serisindeki frekansların toplam frekansa bölümüdür.
+        """
         return [(f / toplam_frekans) for _, f in frekans_serisi]
 
     # params:
