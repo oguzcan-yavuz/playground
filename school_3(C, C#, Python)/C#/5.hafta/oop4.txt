@@ -54,3 +54,15 @@ Ozet siniflar (abstract):
 
     Normal bir sinif bir seyi tam olarak ifade edemeyecekse; bu siniflari ozet olarak
     isaretleyerek instance olusturmadan kalitim yolu ile kullanabiliriz.
+
+    Ozet siniflar turunden nesne tanimlanamaz.
+
+    Ozet siniflar ozet metotlar icerir.
+
+    Ozet metodun erisim belirteci onu kalitim yolu ile devralan sinif ile ayni olmak
+    zorundadir.
+
+    Ozet siniflarda sealed (miras birakamayan) kelimesi kullanilamaz.
+
+    Ozet siniflarda private, virtual, ve static kelimeleri kullanilamaz.
+

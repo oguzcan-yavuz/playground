@@ -1,0 +1,38 @@
+RAM'i kimden istiyoruz?
+    Isletim sisteminden.
+
+int *iptr;
+iptr = (int*)malloc(sizeof(int)*120);
+free(iptr);
+
+void* malloc(int size) => malloc void pointeri tipinde deger dondurdugu icin malloc kullandigimiz zaman istedigimiz tipe cast yapariz.
+
+Pointer kullaniminda dikkat edilmesi gerekenler:
+
+    ! Pointer hatalarini compiler yakalayamaz.
+    Pointer'lari atama yapmadan kullanirsak program yuksek olasilikla coker.
+    Bellegin baslangic adresini kaybetmemek. Eger bu olursa free fonksiyonu ile RAM'i serbest birakamayiz.
+    Isi biten butun bellekleri free ile iade etmek.
+    Iade edilen belleklerin pointer'larini NULL yapacagiz. free() bunu kendisi yapmaz. Eski bellek adresi pointer'da saklanmaya devam eder.
+
+realloc(): Daha onceden alinmis bir bellegin verilerini kaybetmeden boyutunu buyutmek ya da kucultmek icin kullanilir.
+calloc(): malloc haricinde, dondurdugu bellek adresindeki verileri 0'layarak dondurur.
+
+string.h:
+    memset(): Bellek bolgesini sabit bir degerle doldurmak icin kullanilir. Bellekten yer aldigimizda orada eski veriler olabilir. Isletim sistemi
+    bize yalnizca yer verir. Verdigi yer tamamen bos olmayabilir.
+    memcpy():
+    memmove():
+    strcmp()
+    strcpy(): String kopyalar.
+    strlen(): String uzunlugunu alir.
+    strstr(): Kaynak string'de hedef string'in var olup olmadigini kontrol eder. Varsa adresini, yoksa NULL dondurur.
+
+    memcpy vs memmove = cakisan verilerde memcpy duzgun calismaz, memmove calisir.
+
+
+! malloc'dan gelen pointer NULL donuyorsa istenilen bellek alinamiyor demektir. malloc ile yer aldigimizda islemin basarili olup olmadigini hemen
+kontrol etmemiz gerek.
+
+Esitlik atamalari sagdan sola yapilir. Bu nedenle C'de asagidaki gecerlidir:
+    a = b = c = 5
