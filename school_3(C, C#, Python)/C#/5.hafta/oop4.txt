@@ -1,0 +1,56 @@
+base: Turetilmis siniftan (derived) temel sinifin (base) elemanlarina ulasirken yapici metot
+tanimlamaya gerek kalinmamasi icin base kelimesi kullanilir.
+
+Bir sinifin uyeleri:
+metotlar
+Alanlar
+Ozellik
+Yapicilar
+olaylar(events)
+delegeler(delegates)
+
+constructor ozellikleri:
+    1- geriye deger dondurmez
+    2- ismi tiple ayni olmak zorundadir
+    3- istenildigi zaman cagirilamaz, ozel bir cagirilma teknigi vardir.
+    4- nesne uretmek icin cagirilan metottur. yapici metot cagirilmadan heap bellekte nesne
+    uretilemez
+
+destructor(yikici) metotlar: constructor'lari yikmak icin kullanilan metotlar.
+    Syntax: ~ClassName() {}
+
+Python'da derived class icerisinde constructor olusturuldugunda base class'ta constructor
+varsa bunu override eder. C#'da ise ikisini de calistirir. derived'den base'deki constructor'a
+:base(<parameters>) syntax'i ile parametre gonderilir.
+
+cok bicimlilik
+    virtual
+    override
+kapsulleme
+    field
+    property
+    get
+    set
+kalitim
+    :
+    base
+
+
+Ozet siniflar (abstract):
+
+    Ozet siniflar birlestirici rol oynarlar. Ozet bir siniftan turetilmis alt siniflara
+    ait nesneler ozet sinifin tipindeki referanslara baglanabilir.
+
+    Abstract siniflar new anahtar kelimesiyle olusturulamaz.
+
+    interface => abstract ile alakali baska bir konsept
+
+    Bir sinifin ozet olmasi icin en az bir adet soyut metoda sahip olmasi gerekir.
+    Ozet metotlarin govdesi olmaz. Alt siniflarda kullanilan ozet metotlarin iptal
+    edilmesi(override) gerekir.
+
+    Syntax:
+        abstract void calis();  // govdesi olmayan soyut metot
+
+    Normal bir sinif bir seyi tam olarak ifade edemeyecekse; bu siniflari ozet olarak
+    isaretleyerek instance olusturmadan kalitim yolu ile kullanabiliriz.
