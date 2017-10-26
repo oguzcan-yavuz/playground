@@ -7,3 +7,5 @@
 - Delete the pkl and random.txt files from repo, store them in 
 cloud and make a script to download them from where they are stored 
 and extract them into where they supposed to be.
+
+- Fix git submodules.
