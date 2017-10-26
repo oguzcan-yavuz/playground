@@ -1,0 +1,30 @@
+Algoritma:
+    Bir problemin cozumunu saglayan ancak deneme-yanilma ve sezgisel cozume karsit bir yontemdir.
+    Problemin cozumu icin yapilmasi gereken islemleri adim adim ve sirasiyla aciklar.
+
+Akis semasi (Flow chart):
+    Akis semalari, algoritmalarin sematik olarak gosterilmesidir.
+    dikdortgen = islemler
+    altigen = dongu
+    dortgen = if
+    paralel kenar = input / output
+
+Yurutme Zamani T(n):
+
+    int i, j;
+    for(i = 0; i < m: i++)                  // 1 -atama- + (m + 1) -dongu kosulu- + m -arttirma operatoru-
+        for(j = 0; j < n; j++)              // m * (1 + (n + 1) + n)
+            C[i, j] = A[i, j] + B[i, j]     // m * n
+
+    T(n) = 2m + 2 + m *(2n + 2) + mn
+    T(n) = 3mn + 4m + 2,
+
+    Eger m == n olursa; T(n) = 3n² + 4n + 2
+
+Big-O:
+    T(n) bulunduktan sonra, tum degiskenler tek tip degiskene donusturulur, sabitler ve dusuk dereceli terimler atilir ve en yuksek dereceli terim
+    kullanilir.
+
+    T(n) = 2m + 2 + m *(2n + 2) + mn    => O(n) = n2
+    T(n) = 3mn + 4m + 2,                => O(n) = n2
+

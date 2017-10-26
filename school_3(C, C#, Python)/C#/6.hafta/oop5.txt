@@ -1,0 +1,43 @@
+abstract ve interface arasindaki 7 fark
+
+1) An interface cannot implement methods.
+    An abstract class can implement methods.
+
+2) An interface can only inherit from another interface.
+    An abstract class can inherit from a class and one or more interface.
+
+3) An interface cannot contain fields.
+    An abstract class can contain fields.
+
+4) An interface can contain property definition.
+    An abstract class can implement(yerine getirmek, uygulamak) a property.
+
+5) An interface cannot contain constructors or destructors.
+    An abstract class can contain constructors or destructors.
+
+6) An interface can be inherited from by structures.
+    An abstract class cannot be inherited from by structures.
+
+7) An interface can support multiple inheritance.
+    An abstract class cannot support multiple inheritance.
+
+
+
+- Kullanilan nesnelerin turetildigi sinifa girisen yeniliklere ve degisimlere acik olabilmesi icin ve siniflar icin bir rehber olarak interface'ler
+kullanilir. Arayuzler ozellik, metot, olay(event), indeksleyici (indexer) uyelerine sahip olabilir. Ayrica arayuzlerde yapici, yikici metotlar
+ve alanlar(field) kullanilmaz.
+
+- Arayuzler kendisini rehber alan siniflarin uyelerini tanimlar. Herhangi bir kod satiri icermezler.
+
+- Bir interface'in tum uyelerinin erisim belirteci public kabul edilir. Her metot varsayilan olarak publictir.
+
+- Bir interface'in kendisi bir structure veya bir siniftan kalitimla turetilemez. Interface icindeki elemanlar class icerisinde implemente edilecegi
+icin interface elemanlari static olarak tanimlanamaz.
+
+- Arayuzlerin uygulandigi siniflar arayuzle tanimlanan butun uyeleri kullanmak zorundadir.
+
+// Java ile web scrapign icin = JSoup
+    https://jsoup.org/cookbook/input/load-document-from-url
+
+
+
