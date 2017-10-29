@@ -7,7 +7,7 @@ bool recursive_palindrome(char *str, int n, int length) {
     printf("ilk: %c\nson: %c\n", str[n], str[length - n]);
     if(str[n] != str[length - n])
         return false;
-    else if(length / 2 == n)
+    else if(n == length / 2)
         return true;
     return recursive_palindrome(str, n + 1, length);
 }

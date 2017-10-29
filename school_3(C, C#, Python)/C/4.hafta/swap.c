@@ -2,9 +2,13 @@
 
 
 void swap(int *p, int *q) {
-    int r = *p;
-    *p = *q;
-    *q = r;
+//    int r = *p;
+//    *p = *q;
+//    *q = r;
+    // without third variable
+    *p += *q;
+    *q = *p - *q;
+    *p -= *q;
 }
 
 

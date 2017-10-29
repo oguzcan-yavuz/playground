@@ -7,11 +7,11 @@ int main() {
     printf("Bir cumle giriniz.\n");
     gets(cumle);
     char *p;
-    p = (char *) malloc(strlen(cumle) + 1);
     if(p == NULL) {
         printf("Bellek ayrilamiyor!\n");
         return -1;
     }
+    p = (char *) malloc(strlen(cumle) + 1);
     // memcpy(p, cumle, strlen(cumle) + 1);
     // memmove(p, cumle, strlen(cumle) + 1);
     // memcpy(cumle + 2, cumle, 5);
