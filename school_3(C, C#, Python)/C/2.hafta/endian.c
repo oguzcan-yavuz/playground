@@ -15,11 +15,11 @@ union {
 } sayi;
 
 int main(int argc, char *argv[]) {
-    // int n = 1;
-    // if(*(char *)&n == 1)
-    //     printf("Little Endian\n");
-    // else
-    //     printf("Big Endian\n");
+     int n = 1;
+     if(*(char *)&n == 1)
+         printf("Little Endian\n");
+     else
+         printf("Big Endian\n");
     i = 255;
     sayi.butun = i;
     printf("%d %d %d %d\n", sayi.byt.c0, sayi.byt.c1, sayi.byt.c2, sayi.byt.c3);
