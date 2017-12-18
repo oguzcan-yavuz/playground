@@ -37,7 +37,7 @@ class FrekansSerisi(object):
         if gruplar is False:
             return set([(i, data.count(i)) for i in data])
         else:
-            return [[[g0, g1], sum([data.count(i) for i in range(g0, g1)])] for g0, g1 in gruplandirilmis_seri]
+            return [[[g0, g1], sum([data.count(i) for i in range(g0, g1 + 1)])] for g0, g1 in gruplandirilmis_seri]
 
     def kismi_frekans(self, frekans_serisi):
         """
@@ -118,7 +118,6 @@ class GruplandirilmisSeri(object):
         return [sum([grup_frekanslar[j][1] for j in range(i, -1, -1)]) for i in range(len(grup_frekanslar) - 1, -1, -1)]
 
     def aritmetik_ortalama(self, data, grup_sayisi):
-        # TODO: 0 ile bolunme durumu veya bos liste gelme durumunu yakala
         _gruplandirilmis_seri = GruplandirilmisSeri.gruplandirilmis_seri(data, grup_sayisi)
         _temsili_data = self.temsili_datalar(_gruplandirilmis_seri)
         _frekans_serisi = FrekansSerisi.frekans_serisi(data, _gruplandirilmis_seri, gruplar=True)
