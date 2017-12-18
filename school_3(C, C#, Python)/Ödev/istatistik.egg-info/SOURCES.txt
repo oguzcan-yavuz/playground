@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+istatistik/__init__.py
+istatistik/istatistik.py
+istatistik.egg-info/PKG-INFO
+istatistik.egg-info/SOURCES.txt
+istatistik.egg-info/dependency_links.txt
+istatistik.egg-info/top_level.txt

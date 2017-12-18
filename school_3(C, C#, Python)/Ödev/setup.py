@@ -8,6 +8,5 @@ setup(name='istatistik',
       author='Oğuzcan Yavuz',
       author_email='oguzcanyavuz321@gmail.com',
       license='GPLv3',
-      packages=['istatistik'],
-      zip_safe=False
+      packages=['istatistik']
 )
