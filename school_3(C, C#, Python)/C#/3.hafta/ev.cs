@@ -10,7 +10,7 @@ class Ev {
         this.alan = alan;
     }
 
-    virtual public void EvGoster() {    // virtual metotlar, derived class'larda override edilmek zorundadir.
+    public virtual void EvGoster() {    // virtual metotlar, derived class'larda override edilmek zorundadir.
         Console.WriteLine("alan: {0}\nAdres: {1}\n\n", this.alan, this.adres);
     }
 }
