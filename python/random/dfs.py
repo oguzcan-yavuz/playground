@@ -19,6 +19,6 @@ def dfs(node):
         if key not in visited:
             visited.append(key)
             dfs(key)
+    return visited
 
-dfs(starter)
-print(visited)
+print(dfs(starter))
