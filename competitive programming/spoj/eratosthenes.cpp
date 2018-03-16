@@ -1,3 +1,4 @@
+
 /*
     Trying to solve the problem at here: http://www.spoj.com/problems/PRIME1/
 */
@@ -34,6 +35,22 @@ void eratosthenes(unsigned int start, unsigned int end) {
     }
 }
 
+//999999761
+//999999797
+//999999883
+//999999893
+//999999929
+//999999937
+
+//999999883
+//999999893
+//999999899
+//999999929
+//999999937
+//999999971
+
+
+
 int main() {
     int n;
     cin >> n;
@@ -50,4 +67,3 @@ int main() {
     }
     return 0;
 }
-
