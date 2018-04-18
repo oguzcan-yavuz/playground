@@ -16,3 +16,4 @@ venv/
 .ipynb_checkpoints/
 .directory
 node_modules/
+gurur.js
