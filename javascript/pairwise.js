@@ -1,22 +1,17 @@
-function handlePair(arr, i, j) {
-    arr[i] = undefined;
-    arr[j] = undefined;
-    return i + j;
-}
-
 function pairwise(arr, arg) {
-    let sumOfIndexes = 0;
+    let sums = 0;
     for(let i = 0; i < arr.length - 1; i++) {
         let j = i + 1;
-        while(j < arr.length) {
+        for(let j = i + 1; j < arr.length; j++) {
             if(arr[i] + arr[j] === arg) {
-                sumOfIndexes += handlePair(arr, i, j);
+                sums += i + j;
+                arr[i] = undefined;
+                arr[j] = undefined;
                 break;
             }
-            j++;
         }
     }
-    return sumOfIndexes;
+    return sums;
 }
 
 console.log(pairwise([0, 0, 0, 0, 1, 1], 1));
