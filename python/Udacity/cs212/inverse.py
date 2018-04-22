@@ -50,9 +50,13 @@ def newtons_method(f, y):
 
 
 def inverse(f):
-    """Given a function y = f(x) that is a monotonically increasing function on
-    non-negatve numbers, return the function x = f_1(y) that is an approximate
-    inverse, picking the closest value to the inverse, within delta."""
+    """
+    Returns the inverse function of the given function by defining a range first with newton's method,
+    then makes a binary search in that range, comparing actual results with guesses. Inverse function
+    returns the value when non-inverse function gives the desired output when it takes that value as an input.
+    :param f: Function to calculate inverse of.
+    :return: Inverse function of the given function.
+    """
     def f_1(y):
         start, end = newtons_method(f, y)
         candidate = 0
@@ -91,4 +95,7 @@ elapsed_time("Python sqrt", sqrt, 1000000000)
 Slow inverse      : 31622.7734375                 Elapsed time: 0.8436871449994214
 Modified inverse  : 31622.776601683792            Elapsed time: 0.0005310449996613897
 Python sqrt       : 31622.776601683792            Elapsed time: 1.0950006981147453e-06
+
+NOTE: When i run python on interactive mod, 
+python sqrt also takes almost same amount of time with modified inverse.
 """
