@@ -97,5 +97,5 @@ Modified inverse  : 31622.776601683792            Elapsed time: 0.00053104499966
 Python sqrt       : 31622.776601683792            Elapsed time: 1.0950006981147453e-06
 
 NOTE: When i run python on interactive mod,
-python sqrt also takes almost same amount of time with modified inverse.
+python sqrt is way more quicker (Elapsed time: 6.765000023278844e-06).
 """

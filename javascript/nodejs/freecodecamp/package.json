@@ -1,0 +1,25 @@
+{
+  "name": "@yavuzovski/freecodecamp",
+  "version": "1.0.0",
+  "description": ",-----.,--.                  ,--. ,---.   ,--.,------.  ,------.     '  .--./|  | ,---. ,--.,--. ,-|  || o   \\  |  ||  .-.  \\ |  .---'     |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \\  :|  `--,      '  '--'\\|  |' '-' ''  ''  '\\ `-' | .'  /   |  ||  '--'  /|  `---.      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'     -----------------------------------------------------------------",
+  "main": "async.js",
+  "dependencies": {
+    "@linclark/pkg": "^1.0.2",
+    "dateformat": "^3.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "yavuzovski",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yavuzovski/playground/tree/master/javascript/nodejs/freecodecamp"
+  },
+  "keywords": [
+    "tutorial",
+    "freecodecamp",
+    "nodejs"
+  ]
+}
