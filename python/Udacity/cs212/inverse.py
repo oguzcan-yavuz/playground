@@ -96,6 +96,6 @@ Slow inverse      : 31622.7734375                 Elapsed time: 0.84368714499942
 Modified inverse  : 31622.776601683792            Elapsed time: 0.0005310449996613897
 Python sqrt       : 31622.776601683792            Elapsed time: 1.0950006981147453e-06
 
-NOTE: When i run python on interactive mod, 
+NOTE: When i run python on interactive mod,
 python sqrt also takes almost same amount of time with modified inverse.
 """
