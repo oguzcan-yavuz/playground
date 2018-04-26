@@ -1,3 +1,6 @@
 [submodule "school_3(C, C#, Python)/Ödev/Nesne Tabanlı Programlama"]
 	path = "school_3(C, C#, Python)/Ödev/Nesne Tabanlı Programlama"
 	url = git@github.com:yavuzovski/freecodecamp-scraper.git
+[submodule "web development/backend/job-seeker"]
+	path = web development/backend/job-seeker
+	url = git@github.com:yavuzovski/job-seeker.git
