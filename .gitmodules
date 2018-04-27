@@ -4,3 +4,6 @@
 [submodule "web development/backend/job-seeker"]
 	path = web development/backend/job-seeker
 	url = git@github.com:yavuzovski/job-seeker.git
+[submodule "web development/backend/freecodecamp/APIProjects/timestamp-microservice"]
+	path = web development/backend/freecodecamp/APIProjects/timestamp-microservice
+	url = git@github.com:yavuzovski/timestamp-microservice.git
