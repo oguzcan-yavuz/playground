@@ -7,3 +7,6 @@
 [submodule "web development/backend/freecodecamp/APIProjects/timestamp-microservice"]
 	path = web development/backend/freecodecamp/APIProjects/timestamp-microservice
 	url = git@github.com:yavuzovski/timestamp-microservice.git
+[submodule "web development/backend/freecodecamp/APIProjects/header-parser"]
+	path = web development/backend/freecodecamp/APIProjects/header-parser
+	url = https://github.com/yavuzovski/header-parser
