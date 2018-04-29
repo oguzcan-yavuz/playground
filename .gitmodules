@@ -10,3 +10,6 @@
 [submodule "web development/backend/freecodecamp/APIProjects/header-parser"]
 	path = web development/backend/freecodecamp/APIProjects/header-parser
 	url = https://github.com/yavuzovski/header-parser
+[submodule "web development/backend/freecodecamp/APIProjects/url-shortener"]
+	path = web development/backend/freecodecamp/APIProjects/url-shortener
+	url = git@github.com:yavuzovski/url-shortener.git
