@@ -13,3 +13,6 @@
 [submodule "web development/backend/freecodecamp/APIProjects/url-shortener"]
 	path = web development/backend/freecodecamp/APIProjects/url-shortener
 	url = git@github.com:yavuzovski/url-shortener.git
+[submodule "web development/backend/freecodecamp/APIProjects/image-search-abstraction-layer"]
+	path = web development/backend/freecodecamp/APIProjects/image-search-abstraction-layer
+	url = git@github.com:yavuzovski/image-search-abstraction-layer.git
