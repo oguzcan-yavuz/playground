@@ -16,3 +16,6 @@
 [submodule "web development/backend/freecodecamp/APIProjects/image-search-abstraction-layer"]
 	path = web development/backend/freecodecamp/APIProjects/image-search-abstraction-layer
 	url = git@github.com:yavuzovski/image-search-abstraction-layer.git
+[submodule "web development/backend/freecodecamp/APIProjects/file-metadata"]
+	path = web development/backend/freecodecamp/APIProjects/file-metadata
+	url = git@github.com:yavuzovski/file-metadata.git
