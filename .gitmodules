@@ -19,3 +19,6 @@
 [submodule "web development/backend/freecodecamp/APIProjects/file-metadata"]
 	path = web development/backend/freecodecamp/APIProjects/file-metadata
 	url = git@github.com:yavuzovski/file-metadata.git
+[submodule "web development/backend/freecodecamp/DynamicWebAppProjects/voting-app"]
+	path = web development/backend/freecodecamp/DynamicWebAppProjects/voting-app
+	url = git@github.com:yavuzovski/voting-app.git
