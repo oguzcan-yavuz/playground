@@ -9,7 +9,7 @@ All letters will be uppercase. Do not transform any non-alphabetic character (i.
 function rot13(str) {
   // Split str into a character array
   return str.split('').map.call(str, function(char) {
-      x = char.charCodeAt(0);
+      var x = char.charCodeAt(0);
       if (x < 65 || x > 90) {
         return String.fromCharCode(x);
       }
